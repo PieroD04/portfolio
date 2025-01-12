@@ -1,0 +1,38 @@
+{
+  "projects-en": [
+    {
+      "id": 1,
+      "name": "AgroConnect",
+      "description": "A web-based management system designed for guinea pig farms. It enables breeders to track expenses, manage resources, and schedule expert consultations. The backend was built with Spring Boot, while the frontend leverages Angular for an interactive user experience.",
+      "date": "April 2024 - June 2024",
+      "image": "../assets/images/hero-image.png",
+      "url": "https://github.com/PieroD04/agroconnect"
+    },
+    {
+      "id": 2,
+      "name": "AgroSupport",
+      "description": "A mobile application developed to connect farmers with expert advisors. It enables users to schedule consultations, view expert posts, personalize their profiles, and manage their consultation history. The backend was implemented with Spring Boot, and the mobile frontend was developed in Kotlin using Jetpack Compose.",
+      "date": "August 2024 - November 2024",
+      "image": "../assets/images/hero-image.png",
+      "url": "https://github.com/PieroD04/agrosupport"
+    }
+  ],
+  "projects-es": [
+    {
+      "id": 1,
+      "name": "AgroConnect",
+      "description": "Un sistema de gestión diseñado para granjas de cuyes para páginas web. Permite a los criadores hacer un seguimiento de los gastos, gestionar los recursos y programar consultas con expertos. El backend se construyó con Spring Boot, mientras que el frontend aprovecha Angular para una experiencia de usuario interactiva.",
+      "date": "Abril 2024 - Junio 2024",
+      "image": "../assets/images/hero-image.png",
+      "url": "https://github.com/PieroD04/agroconnect"
+    },
+    {
+      "id": 2,
+      "name": "AgroSupport",
+      "description": "Una aplicación móvil desarrollada para conectar a agricultores y ganaderos con asesores expertos. Permite a los usuarios programar consultas, ver publicaciones de expertos, personalizar sus perfiles y gestionar su historial de consultas. El backend se implementó con Spring Boot, y el frontend móvil se desarrolló en Kotlin utilizando Jetpack Compose.",
+      "date": "Agosto 2024 - Noviembre 2024",
+      "image": "../assets/images/hero-image.png",
+      "url": "https://github.com/PieroD04/agrosupport"
+    }
+  ]
+}
