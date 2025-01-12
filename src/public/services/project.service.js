@@ -1,4 +1,4 @@
-import projectData from '../data/projects.json';
+import projectData from '@/data/projects.json';
 import { Project } from '../models/project.entity.js';
 
 export class ProjectService {

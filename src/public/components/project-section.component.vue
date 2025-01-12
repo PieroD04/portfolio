@@ -16,20 +16,10 @@ const responsiveOptions = ref([
   {
     breakpoint: '1400px',
     numVisible: 2,
-    numScroll: 1
-  },
-  {
-    breakpoint: '1199px',
-    numVisible: 3,
-    numScroll: 1
+    numScroll: 2
   },
   {
     breakpoint: '767px',
-    numVisible: 2,
-    numScroll: 1
-  },
-  {
-    breakpoint: '575px',
     numVisible: 1,
     numScroll: 1
   }
@@ -40,11 +30,13 @@ const responsiveOptions = ref([
 <template>
   <section id="projects-section">
     <h2>{{t("projects-title")}}</h2>
-    <pv-carousel :value="projects" :num-visible="3" :num-scroll="3" :responsive-options="responsiveOptions">
-      <template #item="project">
-        <project-card :project="project.data"/>
-      </template>
-    </pv-carousel>
+    <div id="project-carousel">
+      <pv-carousel :value="projects" :num-visible="3" :num-scroll="3" :responsive-options="responsiveOptions">
+        <template #item="project">
+          <project-card :project="project.data"/>
+        </template>
+      </pv-carousel>
+    </div>
   </section>
 </template>
 
@@ -53,5 +45,10 @@ const responsiveOptions = ref([
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#project-carousel{
+  width: 90%;
+  margin: 0 auto;
 }
 </style>
