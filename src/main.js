@@ -7,6 +7,7 @@ import Button from "primevue/button";
 import Toolbar from "primevue/toolbar";
 import Card from "primevue/card";
 import Select from "primevue/select";
+import Carousel from "primevue/carousel";
 import './style.css'
 import 'primeicons/primeicons.css';
 import en from './locale/en.json'
@@ -35,4 +36,5 @@ app.component('pv-button', Button);
 app.component('pv-toolbar', Toolbar);
 app.component('pv-card', Card);
 app.component('pv-select', Select);
+app.component('pv-carousel', Carousel);
 app.mount('#app')
