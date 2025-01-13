@@ -4,6 +4,18 @@
   "hero-subtitle": "Turning ideas into software solutions",
   "hero-description": "I'm a Software Engineering student in my 7th semester at UPC, with a proven track record of academic excellence (top 10% of my class). Passionate about building efficient web and mobile applications and solving real-world problems through technology.",
   "projects-title": "Projects",
+  "projects-subtitle": "Here are some of the projects I've worked on",
   "project-image": "Project Image",
-  "project-button": "View more"
+  "project-button": "View more",
+  "contact-title": "Contact Me",
+  "contact-subtitle": "<span>Let's talk!</span> I'm available for job opportunities and collaboration.",
+  "contact-name": "Name",
+  "contact-email": "Email",
+  "contact-message": "Message",
+  "contact-button": "Send Message",
+  "invalid-name": "Please enter a name",
+  "invalid-email": "Please enter a valid email",
+  "invalid-message": "Please enter a message",
+  "success-message": "Message sent successfully",
+  "error-message": "An error occurred while sending the message"
 }

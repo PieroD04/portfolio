@@ -4,6 +4,18 @@
   "hero-subtitle": "Transformando ideas en soluciones de software",
   "hero-description": "Soy estudiante de Ingeniería de Software en mi 7mo ciclo en la UPC, con un sólido desempeño académico (top 10% de mi carrera). Apasionado por desarrollar aplicaciones web y móviles eficientes y resolver problemas del mundo real a través de la tecnología.",
   "projects-title": "Proyectos",
+  "projects-subtitle": "Aquí tienes algunos de los proyectos en los que he trabajado",
   "project-image": "Imagen del Proyecto",
-  "project-button": "Ver más"
+  "project-button": "Ver más",
+  "contact-title": "Contáctame",
+  "contact-subtitle": "¡Hablemos! Estoy disponible para oportunidades de trabajo y colaboración.",
+  "contact-name": "Nombre",
+  "contact-email": "Correo Electrónico",
+  "contact-message": "Mensaje",
+  "contact-button": "Enviar Mensaje",
+  "invalid-name": "Por favor ingresa un nombre",
+  "invalid-email": "Por favor ingresa un correo electrónico válido",
+  "invalid-message": "Por favor ingresa un mensaje",
+  "success-message": "Mensaje enviado exitosamente",
+  "error-message": "Ocurrió un error al enviar el mensaje"
 }

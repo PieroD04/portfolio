@@ -8,6 +8,12 @@ import Toolbar from "primevue/toolbar";
 import Card from "primevue/card";
 import Select from "primevue/select";
 import Carousel from "primevue/carousel";
+import Toast from "primevue/toast";
+import ToastService from 'primevue/toastservice';
+import TextArea from "primevue/textarea";
+import Message from "primevue/message";
+import InputText from "primevue/inputtext";
+import Form from "@primevue/forms/form";
 import './style.css'
 import 'primeicons/primeicons.css';
 import en from './locale/en.json'
@@ -35,9 +41,15 @@ app.use(PrimeVue, {
     }
 });
 app.use(i18n);
+app.use(ToastService);
 app.component('pv-button', Button);
 app.component('pv-toolbar', Toolbar);
 app.component('pv-card', Card);
 app.component('pv-select', Select);
 app.component('pv-carousel', Carousel);
+app.component('pv-toast', Toast);
+app.component('pv-message', Message);
+app.component('pv-inputtext', InputText);
+app.component('pv-textarea', TextArea);
+app.component('pv-form', Form);
 app.mount('#app')
