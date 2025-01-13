@@ -7,7 +7,10 @@ const { t } = useI18n();
   <section id="hero-section">
     <div id="hero-information">
       <h1>{{t("hero-title")}}</h1>
-      <h3><i class="pi pi-spin pi-cog" style="font-size: 1.5rem"/>  {{t("hero-subtitle")}}</h3>
+      <h3 style="display: flex; align-items: center; justify-content: center;">
+        <i class="pi pi-spin pi-cog" style="font-size: 1.5rem; margin-right: 8px;" />
+        {{ t("hero-subtitle") }}
+      </h3>
       <p>{{t("hero-description")}}</p>
     </div>
     <div id="hero-image">
@@ -51,10 +54,6 @@ const { t } = useI18n();
   }
 }
 
-#project-carrousel {
-  height: 30vh;
-}
-
 @media screen and (max-width: 1024px) {
   section {
     margin: 1rem 0;
@@ -64,6 +63,15 @@ const { t } = useI18n();
     display: flex;
     flex-direction: column;
     margin: 1rem;
+  }
+
+  #hero-image {
+    padding: 3rem;
+
+    & img {
+      width: 15rem;
+      height: 15rem;
+    }
   }
 
 }
@@ -85,6 +93,17 @@ const { t } = useI18n();
     & img {
       width: 15rem;
       height: 15rem;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #hero-image {
+    padding: 1rem;
+
+    & img {
+      width: 8rem;
+      height: 8rem;
     }
   }
 }

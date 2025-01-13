@@ -65,8 +65,65 @@ const getImagePath = (image) => {
 }
 
 @media screen and (max-width: 600px) {
-  :deep .p-card-body {
+  :deep(.p-card-header) {
+    margin: 0.5rem;
+  }
+
+  :deep(.p-card-title) {
+    font-size: 16px;
+  }
+
+
+  :deep(.p-card-body) {
     padding: 0;
+  }
+
+  .project-card{
+    text-align: center;
+  }
+
+  .project-date {
+    font-size: 12px;
+  }
+
+  .project-description {
+    font-size: 10px;
+  }
+
+  .project-card img {
+    border-radius: 50%;
+    width: 8rem;
+    height: 8rem;
+  }
+
+  .project-link{
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  :deep(.p-button-icon){
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 400px){
+  :deep(.p-card-header) {
+    margin: 0;
+  }
+
+  .project-card img {
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .project-link{
+    font-size: 8px;
+    padding: 8px 12px;
+  }
+
+  :deep(.p-button-icon){
+    font-size: 8px;
   }
 }
 
