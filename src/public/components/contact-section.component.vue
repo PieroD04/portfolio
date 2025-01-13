@@ -43,7 +43,10 @@ const onFormSubmit = ({ valid }) => {
   <section id="contact-section">
     <div id="contact-intro">
       <h2>{{ t("contact-title") }}</h2>
-      <h3 v-html="t('contact-subtitle')"></h3>
+      <h3>
+        <span>{{t('contact-subtitle.bold')}}</span>
+        {{ t('contact-subtitle.normal') }}
+      </h3>
     </div>
     <div id="contact-container">
       <div id="contact-information">

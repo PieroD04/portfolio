@@ -8,7 +8,10 @@
   "project-image": "Imagen del Proyecto",
   "project-button": "Ver más",
   "contact-title": "Contáctame",
-  "contact-subtitle": "¡Hablemos! Estoy disponible para oportunidades de trabajo y colaboración.",
+  "contact-subtitle": {
+    "bold": "¡Hablemos!",
+    "normal": " Estoy disponible para oportunidades laborales y colaboraciones."
+  },
   "contact-name": "Nombre",
   "contact-email": "Correo Electrónico",
   "contact-message": "Mensaje",

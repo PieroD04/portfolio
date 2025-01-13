@@ -8,7 +8,10 @@
   "project-image": "Project Image",
   "project-button": "View more",
   "contact-title": "Contact Me",
-  "contact-subtitle": "<span>Let's talk!</span> I'm available for job opportunities and collaboration.",
+  "contact-subtitle": {
+    "bold": "Let's talk!",
+    "normal": " I'm available for job opportunities and collaboration."
+  },
   "contact-name": "Name",
   "contact-email": "Email",
   "contact-message": "Message",
