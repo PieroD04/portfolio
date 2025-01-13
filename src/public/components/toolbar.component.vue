@@ -3,8 +3,7 @@ import { onMounted, ref } from 'vue';
 import enIcon from '@/assets/icons/en.svg';
 import esIcon from '@/assets/icons/es.svg';
 import { useI18n } from 'vue-i18n';
-const { locale } = useI18n();
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 const selectedLanguage = ref(localStorage.getItem('language') || 'en');
 locale.value = selectedLanguage.value;

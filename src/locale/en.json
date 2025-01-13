@@ -20,5 +20,6 @@
   "invalid-email": "Please enter a valid email",
   "invalid-message": "Please enter a message",
   "success-message": "Message sent successfully",
-  "error-message": "An error occurred while sending the message"
+  "error-message": "An error occurred while sending the message",
+  "copyright": "Copyright © 2024. All Rights Reserved. Developed by Piero Delgado"
 }
