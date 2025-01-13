@@ -11,7 +11,7 @@ defineProps({
 });
 
 const getImagePath = (image) => {
-  return `/public/assets/images/${image}`;
+  return `/assets/images/${image}`;
 };
 
 </script>
