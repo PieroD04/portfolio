@@ -25,7 +25,7 @@ const changeLanguage = (event) => {
 </script>
 
 <template>
-  <pv-toolbar aria-label="Main Navigation">
+  <pv-toolbar id="navbar" aria-label="Main Navigation">
     <template #start>
       <div class="logo">
         <!--img alt="logo" src="../../assets/icons/logo.ico" width="40" height="40" /-->
@@ -49,6 +49,17 @@ const changeLanguage = (event) => {
 </template>
 
 <style scoped>
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 6px;
+  border-radius: 0;
+  background-color: rgba(39, 39, 42, 0.8);
+  backdrop-filter: blur(5px);
+}
+
 h2 {
   font-size: 1.5rem;
   font-weight: 300;

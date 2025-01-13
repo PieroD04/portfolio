@@ -29,7 +29,10 @@ const responsiveOptions = ref([
 
 <template>
   <section id="projects-section">
-    <h2>{{t("projects-title")}}</h2>
+    <div id="projects-intro">
+      <h2>{{t("projects-title")}}</h2>
+      <h3>{{t("projects-subtitle")}}</h3>
+    </div>
     <div id="project-carousel">
       <pv-carousel :value="projects" :num-visible="3" :num-scroll="3" :responsive-options="responsiveOptions">
         <template #item="project">
@@ -47,8 +50,18 @@ const responsiveOptions = ref([
   align-items: center;
 }
 
+#projects-intro{
+  text-align: center;
+}
+
 #project-carousel{
   width: 90%;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1024px) {
+  #projects-intro{
+    margin: 0 1rem;
+  }
 }
 </style>
