@@ -3,6 +3,7 @@ import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 import { ref } from 'vue';
 import { useToast } from 'primevue/usetoast';
+import {FormService} from "@/public/services/form.service.js";
 
 const toast = useToast();
 
@@ -29,9 +30,19 @@ const resolver = ({ values }) => {
   };
 }
 
-const onFormSubmit = ({ valid }) => {
-  if (valid) {
-    toast.add({ severity: 'success', summary: t('success-message'), life: 3000 });
+const onFormSubmit = async (e) => {
+  if (e.valid) {
+    const formData = {
+      name: e.states.name?.value,
+      email: e.states.email?.value,
+      message: e.states.message?.value
+    };
+    const success = await FormService.sendForm(formData);
+    if (success) {
+      toast.add({ severity: 'success', summary: t('success-message'), life: 3000 });
+    } else {
+      toast.add({ severity: 'error', summary: t('error-message'), life: 3000 });
+    }
   } else {
     toast.add({ severity: 'error', summary: t('error-message'), life: 3000 });
   }
@@ -90,7 +101,7 @@ const onFormSubmit = ({ valid }) => {
       </div>
     </div>
 
-    <pv-toast position="bottom-right" group="br"/>
+    <pv-toast position="bottom-right"/>
   </section>
 </template>
 
