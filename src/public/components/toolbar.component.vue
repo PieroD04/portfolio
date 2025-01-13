@@ -22,6 +22,12 @@ const changeLanguage = (event) => {
   locale.value = event;
 }
 
+function toggleDarkMode() {
+  document.documentElement.classList.toggle('dark-mode');
+}
+
+
+
 </script>
 
 <template>
@@ -36,6 +42,7 @@ const changeLanguage = (event) => {
 
     </template>
     <template #end>
+      <pv-button style="margin-right: 0.5rem" icon="pi pi-lightbulb" @click="toggleDarkMode()" />
       <pv-select v-model="selectedLanguage" :options="languages" option-label="label" option-value="code" @update:model-value="changeLanguage">
         <template #option="language">
           <div class="language-option">
@@ -56,8 +63,10 @@ const changeLanguage = (event) => {
   width: 100%;
   padding: 6px;
   border-radius: 0;
-  background-color: rgba(39, 39, 42, 0.8);
+  opacity: 0.8;
   backdrop-filter: blur(5px);
+  border: 0;
+  z-index: 10;
 }
 
 h2 {

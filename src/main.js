@@ -28,7 +28,10 @@ const i18n = createI18n({
 app.use(PrimeVue, {
     ripple: true,
     theme: {
-        preset: Lara
+        preset: Lara,
+        options: {
+            darkModeSelector: '.dark-mode'
+        }
     }
 });
 app.use(i18n);
