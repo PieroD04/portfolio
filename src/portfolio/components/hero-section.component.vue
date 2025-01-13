@@ -14,7 +14,7 @@ const { t } = useI18n();
       <p>{{t("hero-description")}}</p>
     </div>
     <div id="hero-image">
-      <img src="../../assets/images/hero-image.jpeg" alt="hero image"/>
+      <img src="../../../public/assets/images/hero-image.jpeg" alt="hero image"/>
     </div>
   </section>
 </template>

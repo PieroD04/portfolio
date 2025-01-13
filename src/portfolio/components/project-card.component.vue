@@ -1,5 +1,5 @@
 <script setup>
-import { Project } from "@/public/models/project.entity.js";
+import { Project } from "@/portfolio/models/project.entity.js";
 import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 
@@ -11,7 +11,7 @@ defineProps({
 });
 
 const getImagePath = (image) => {
-  return `/src/assets/images/${image}`;
+  return `/public/assets/images/${image}`;
 };
 
 </script>

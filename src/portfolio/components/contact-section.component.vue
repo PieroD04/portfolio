@@ -3,7 +3,7 @@ import { useI18n } from 'vue-i18n';
 const { t } = useI18n();
 import { ref } from 'vue';
 import { useToast } from 'primevue/usetoast';
-import {FormService} from "@/public/services/form.service.js";
+import {FormService} from "@/portfolio/services/form.service.js";
 
 const toast = useToast();
 

@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, ref } from 'vue';
-import enIcon from '@/assets/icons/en.svg';
-import esIcon from '@/assets/icons/es.svg';
+import enIcon from '../../../public/assets/icons/en.svg';
+import esIcon from '../../../public/assets/icons/es.svg';
 import { useI18n } from 'vue-i18n';
 const { t, locale } = useI18n();
 
