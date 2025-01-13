@@ -5,7 +5,7 @@
       "name": "AgroConnect",
       "description": "A system for managing guinea pig farms, including resource and expense tracking, and scheduling expert consultations. Developed with Spring Boot and Angular.",
       "date": "April 2024 - June 2024",
-      "image": "hero-image.png",
+      "image": "agroconnect.png",
       "url": "https://github.com/PieroD04/agroconnect"
     },
     {
@@ -13,7 +13,7 @@
       "name": "AgroSupport",
       "description": "A mobile app for scheduling consultations between farmers and experts, using Spring Boot and Kotlin with Jetpack Compose",
       "date": "August 2024 - November 2024",
-      "image": "hero-image.png",
+      "image": "agrosupport.png",
       "url": "https://github.com/PieroD04/agrosupport"
     },
     {
@@ -21,15 +21,15 @@
       "name": "DataPathway",
       "description": "A project to optimize data network traffic using Kruskal and Prim algorithms to construct minimum spanning trees on a dataset of 3.5 million network flows.",
       "date": "September 2024 - November 2024",
-      "image": "hero-image.png",
-      "url": "https://github.com/PieroD04/datapathway"
+      "image": "datapathway.png",
+      "url": "https://github.com/PieroD04/algorithmic-complexity-assignment"
     },
     {
       "id": 4,
       "name": "CargoApp",
       "description": "A comprehensive system for managing road transportation of goods, optimizing trip management, expense tracking, and real-time monitoring. Built with C# .NET and Vue.js.",
       "date": "April 2024 - June 2024",
-      "image": "hero-image.png",
+      "image": "cargoapp.png",
       "url": "https://github.com/PieroD04/cargoapp"
     },
     {
@@ -37,8 +37,8 @@
       "name": "Nine Men's Morris Game",
       "description": "A console game developed in C++ for practicing control structures, modular design, and arrays in an algorithmic context.",
       "date": "May 2022 - November 2022",
-      "image": "hero-image.png",
-      "url": "https://github.com/PieroD04/juegodemolino"
+      "image": "molino.png",
+      "url": "https://github.com/PieroD04/Nine-Mens-Morris"
     }
   ],
   "projects-es": [
@@ -47,7 +47,7 @@
       "name": "AgroConnect",
       "description": "Sistema para gestionar granjas de cuyes, con seguimiento de recursos, gastos y programación de consultas con expertos. Desarrollado con Spring Boot y Angular.",
       "date": "Abril 2024 - Junio 2024",
-      "image": "hero-image.png",
+      "image": "agroconnect.png",
       "url": "https://github.com/PieroD04/agroconnect"
     },
     {
@@ -55,7 +55,7 @@
       "name": "AgroSupport",
       "description": "Aplicación móvil para programar consultas entre criadores de cuyes y expertos, utilizando Spring Boot y Kotlin con Jetpack Compose.",
       "date": "Agosto 2024 - Noviembre 2024",
-      "image": "hero-image.png",
+      "image": "agrosupport.png",
       "url": "https://github.com/PieroD04/agrosupport"
     },
     {
@@ -63,15 +63,15 @@
       "name": "DataPathway",
       "description": "Proyecto realizado con Python para optimizar el tráfico en redes de datos usando los algoritmos de Kruskal y Prim para optimización de ancho de banda.",
       "date": "Septiembre 2024 - Noviembre 2024",
-      "image": "hero-image.png",
-      "url": "https://github.com/PieroD04/datapathway"
+      "image": "datapathway.png",
+      "url": "https://github.com/PieroD04/algorithmic-complexity-assignment"
     },
     {
       "id": 4,
       "name": "CargoApp",
       "description": "Sistema integral para gestionar el transporte terrestre de mercancías, optimizando la gestión de viajes, el seguimiento de gastos y el monitoreo en tiempo real. Desarrollado con C# .NET y Vue.js.",
       "date": "Abril 2024 - Junio 2024",
-      "image": "hero-image.png",
+      "image": "cargoapp.png",
       "url": "https://github.com/PieroD04/cargoapp"
     },
     {
@@ -79,8 +79,8 @@
       "name": "Juego del Molino",
       "description": "Juego en consola desarrollado en C++ para practicar estructuras de control, diseño modular y uso de arreglos en el contexto de algoritmos.",
       "date": "Mayo 2022 - Noviembre 2022",
-      "image": "hero-image.png",
-      "url": "https://github.com/PieroD04/juegodemolino"
+      "image": "molino.png",
+      "url": "https://github.com/PieroD04/Nine-Mens-Morris"
     }
   ]
 }

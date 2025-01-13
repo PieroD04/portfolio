@@ -59,9 +59,15 @@ const getImagePath = (image) => {
 
 .project-card img {
   width: 100%;
-  height: auto;
+  height: 18rem;
   object-fit: cover;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 1024px){
+  .project-card img {
+    height: 13rem;
+  }
 }
 
 @media screen and (max-width: 600px) {
