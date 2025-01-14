@@ -13,6 +13,8 @@ const initialValues = ref({
   message: ''
 });
 
+const isSubmitting = ref(false);
+
 const resolver = ({ values }) => {
   const errors = {};
   if (!values.name) {
@@ -31,20 +33,31 @@ const resolver = ({ values }) => {
 }
 
 const onFormSubmit = async (e) => {
-  if (e.valid) {
+  if (!e.valid) {
+    toast.add({ severity: 'error', summary: t('error-message'), life: 3000 });
+    return;
+  }
+
+  if (isSubmitting.value) return;
+  isSubmitting.value = true;
+
+  try {
     const formData = {
       name: e.states.name?.value,
       email: e.states.email?.value,
       message: e.states.message?.value
     };
     const success = await FormService.sendForm(formData);
-    if (success) {
-      toast.add({ severity: 'success', summary: t('success-message'), life: 3000 });
-    } else {
-      toast.add({ severity: 'error', summary: t('error-message'), life: 3000 });
-    }
-  } else {
+
+    toast.add({
+      severity: success ? 'success' : 'error',
+      summary: t(success ? 'success-message' : 'error-message'),
+      life: 3000
+    });
+  } catch (error) {
     toast.add({ severity: 'error', summary: t('error-message'), life: 3000 });
+  } finally {
+    isSubmitting.value = false;
   }
 };
 </script>
@@ -96,7 +109,7 @@ const onFormSubmit = async (e) => {
               <pv-message v-if="$form.message?.invalid" severity="error" size="small" variant="simple">{{ $form.message.error.message }}</pv-message>
             </div>
           </div>
-          <pv-button :disabled="!$form.valid" type="submit" :label="t('contact-button')" />
+          <pv-button :disabled="!$form.valid || isSubmitting" type="submit" :label="t('contact-button')" />
         </pv-form>
       </div>
     </div>
