@@ -30,7 +30,7 @@ watch(() => locale.value, () => {
     <h2>{{ t('knowledge-title') }}</h2>
     <h3>{{ t('knowledge-subtitle') }}</h3>
     <div id="knowledge-accordion">
-      <pv-accordion multiple>
+      <pv-accordion :value="['0']" multiple>
         <pv-accordionpanel value="0">
           <pv-accordionheader>
             <div class="accordion-header">
