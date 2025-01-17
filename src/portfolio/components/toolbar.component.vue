@@ -74,7 +74,7 @@ onMounted(() => {
   width: 100%;
   padding: 6px;
   border-radius: 0;
-  opacity: 0.8;
+  opacity: 0.95;
   backdrop-filter: blur(5px);
   border: 0;
   z-index: 10;
