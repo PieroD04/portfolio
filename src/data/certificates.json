@@ -1,0 +1,76 @@
+{
+  "certificates": [
+    {
+      "title": {
+        "en": "Python for Everybody",
+        "es": "Python para Todos"
+      },
+      "issuer": {
+        "en": "University of Michigan",
+        "es": "Universidad de Michigan"
+      },
+      "date": "Mar. 2024",
+      "link": "https://www.coursera.org/account/accomplishments/specialization/8FHRQZJNXZGS"
+    },
+    {
+      "title": {
+        "en": "Introduction to MongoDB",
+        "es": "Introducción a MongoDB"
+      },
+      "issuer": {
+        "en": "MongoDB",
+        "es": "MongoDB"
+      },
+      "date": "Oct. 2023",
+      "link": "https://ti-user-certificates.s3.amazonaws.com/ae62dcd7-abdc-4e90-a570-83eccba49043/7e3515a6-7629-4811-a9bc-2fb4d9fca3e1-piero-gonzalo-delgado-corrales-eb2f9a71-f5c7-4a11-b17d-afd1baa75d93-certificate.pdf"
+    },
+    {
+      "title": {
+        "en": "Cybersecurity: Defense Against the Digital Dark Arts",
+        "es": "Ciberseguridad: Defensa contra las Artes Oscuras Digitales"
+      },
+      "issuer": {
+        "en": "Google",
+        "es": "Google"
+      },
+      "date": "Nov. 2022",
+      "link": "https://www.coursera.org/account/accomplishments/verify/PG7YNBU87WFC"
+    },
+    {
+      "title": {
+        "en": "Introduction to Web Development",
+        "es": "Introducción al Desarrollo Web"
+      },
+      "issuer": {
+        "en": "University of Los Andes",
+        "es": "Universidad de los Andes"
+      },
+      "date": "Oct. 2022",
+      "link": "https://www.coursera.org/account/accomplishments/verify/VAQ9A9LHPYL7"
+    },
+    {
+      "title": {
+        "en": "Scrum Fundamentals Certified",
+        "es": "Certificado en Fundamentos de Scrum"
+      },
+      "issuer": {
+        "en": "SCRUMstudy",
+        "es": "SCRUMstudy"
+      },
+      "date": "Oct. 2022",
+      "link": "https://www.scrumstudy.com/certification/verify?type=SFC&number=976335"
+    },
+    {
+      "title": {
+        "en": "Introduction to Programming with Python I",
+        "es": "Introducción a la Programación con Python I"
+      },
+      "issuer": {
+        "en": "University of Chile",
+        "es": "Universidad de Chile"
+      },
+      "date": "Aug. 2022",
+      "link": "https://www.coursera.org/account/accomplishments/verify/P8227STEDBVC"
+    }
+  ]
+}

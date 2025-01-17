@@ -14,6 +14,10 @@ import TextArea from "primevue/textarea";
 import Message from "primevue/message";
 import InputText from "primevue/inputtext";
 import Form from "@primevue/forms/form";
+import Accordion from "primevue/accordion";
+import AccordionContent from "primevue/accordioncontent";
+import AccordionPanel from "primevue/accordionpanel";
+import AccordionHeader from "primevue/accordionheader";
 import './style.css'
 import 'primeicons/primeicons.css';
 import en from './locale/en.json'
@@ -52,4 +56,8 @@ app.component('pv-message', Message);
 app.component('pv-inputtext', InputText);
 app.component('pv-textarea', TextArea);
 app.component('pv-form', Form);
+app.component('pv-accordion', Accordion);
+app.component('pv-accordioncontent', AccordionContent);
+app.component('pv-accordionpanel', AccordionPanel);
+app.component('pv-accordionheader', AccordionHeader);
 app.mount('#app')

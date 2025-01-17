@@ -1,0 +1,9 @@
+{
+  "Design": ["Figma", "Canva"],
+  "Version Control": ["Git", "GitHub"],
+  "Development Tools": ["IntelliJ IDEA", "WebStorm", "Visual Studio Code", "Android Studio"],
+  "Project Management": ["Trello", "Miro"],
+  "Deployment": ["Docker"],
+  "Testing": ["Postman", "Swagger"],
+  "Office Tools": ["Microsoft Office"]
+}

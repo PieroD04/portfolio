@@ -1,0 +1,7 @@
+{
+  "Programming Languages": ["Python", "C++", "C#", "Java", "Kotlin", "Dart", "JavaScript"],
+  "Frameworks": ["Spring Boot", ".NET", "Angular", "Vue.js", "Jetpack Compose"],
+  "Databases": ["MySQL", "MongoDB"],
+  "Web Technologies": ["HTML", "CSS"],
+  "Methodologies": ["Scrum", "Gitflow", "Domain-Driven Design"]
+}
