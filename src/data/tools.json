@@ -1,7 +1,7 @@
 {
   "Design": ["Figma", "Canva"],
   "Version Control": ["Git", "GitHub"],
-  "Development Tools": ["IntelliJ IDEA", "WebStorm", "Visual Studio Code", "Android Studio"],
+  "Development Tools": ["IntelliJ IDEA", "WebStorm", "Rider", "Visual Studio Code", "Visual Studio", "Android Studio"],
   "Project Management": ["Trello", "Miro"],
   "Deployment": ["Docker"],
   "Testing": ["Postman", "Swagger"],

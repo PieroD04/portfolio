@@ -19,7 +19,7 @@ const getImagePath = (image) => {
 <template>
   <pv-card class="project-card">
     <template #header>
-      <img :alt="`${t('project-image')} ${project.id}`" :src="getImagePath(project.image)" />
+      <img :alt="`${t('project-image')} ${project.image}`" :src="getImagePath(project.image)" />
     </template>
     <template #title>{{project.name}}</template>
     <template #subtitle>

@@ -4,13 +4,11 @@ import { Project } from '../models/project.entity.js';
 export class ProjectService {
     static getProjects(language = "en") {
         try {
-            const projectsKey = language === "es" ? "projects-es" : "projects-en";
-            const projects = projectData[projectsKey];
+            const projects = projectData.projects;
             return projects.map(project => new Project(
-                project.id,
-                project.name,
-                project.description,
-                project.date,
+                project.name[language],
+                project.description[language],
+                project.date[language],
                 project.image,
                 project.url
             ));
