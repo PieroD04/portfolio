@@ -12,6 +12,10 @@ const { t } = useI18n();
         {{ t("hero-subtitle") }}
       </h3>
       <p>{{t("hero-description")}}</p>
+      <div id="hero-button">
+        <pv-button as="a" href="https://drive.google.com/file/d/1WYWNDDyr6G3QGURVftQ60Iqbgh_EEjZd/view?usp=sharing" target="_blank" rel="noopener"
+                   :label="t('hero-button')" severity="danger" icon="pi pi-file-pdf" style="text-decoration: none;" raised/>
+      </div>
     </div>
     <div id="hero-image">
       <img src="/assets/images/hero-image.jpeg" alt="hero image"/>
@@ -38,7 +42,7 @@ const { t } = useI18n();
 
   & p {
     width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 1rem;
   }
 }
 
@@ -73,13 +77,13 @@ const { t } = useI18n();
 }
 
 @media screen and (max-width: 768px) {
-  #hero-information{
+   #hero-information{
     width: 90%;
     margin: 0 auto;
 
     & p {
       width: 100%;
-      margin: 0 auto;
+      margin: 0 auto 1rem;
     }
   }
 
