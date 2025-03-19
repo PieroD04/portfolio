@@ -2,6 +2,22 @@
   "projects": [
     {
       "name": {
+        "en": "Expense Tracker",
+        "es": "Expense Tracker"
+      },
+      "description": {
+        "en": "Web app to track personal expenses, categorize spending, and view analytics. Built with Django, React, and PostgreSQL.",
+        "es": "Aplicación web para gestionar gastos personales, categorizar dichos gastos y obtener gráficas. Desarrollado con Django, React y PostgreSQL."
+      },
+      "date": {
+        "en": "January 2025 - February 2025",
+        "es": "Enero 2025 - Febrero 2025"
+      },
+      "image": "expensetracker.png",
+      "url": "https://github.com/PieroD04/expensetracker"
+    },
+    {
+      "name": {
         "en": "AgroSupport",
         "es": "AgroSupport"
       },

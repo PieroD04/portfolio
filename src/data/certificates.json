@@ -2,6 +2,18 @@
   "certificates": [
     {
       "title": {
+        "en": "TOEIC English Listening and Reading Test",
+        "es": "TOEIC Examen de Escucha y Lectura en Inglés"
+      },
+      "issuer": {
+        "en": "ETS",
+        "es": "ETS"
+      },
+      "date": "Feb. 2025",
+      "link": "https://drive.google.com/file/d/1HhFQ_NgqJUAQzHMtbRSeWZqWZ6wh-7CM/view?usp=sharing"
+    },
+    {
+      "title": {
         "en": "Python for Everybody",
         "es": "Python para Todos"
       },
