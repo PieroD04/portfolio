@@ -1,7 +1,7 @@
 {
   "Programming Languages": ["C#", "C++", "Dart", "Java", "JavaScript", "Kotlin", "Python", "TypeScript"],
   "Frameworks": ["Angular", "ASP.NET Core", "Django", "Flask", "Jetpack Compose", "React", "Spring Boot", "Vue.js"],
-  "Web Technologies": ["CSS", "HTML"],
+  "Web Technologies": ["CSS", "HTML", "Tailwind"],
   "Databases": ["MongoDB", "MySQL", "PostgreSQL", "SQL Server 2019"],
   "Methodologies": ["Domain-Driven Design", "Gitflow", "Scrum"]
 }

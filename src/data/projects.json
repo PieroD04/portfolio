@@ -2,6 +2,22 @@
   "projects": [
     {
       "name": {
+        "en": "Smart Scheduler",
+        "es": "Smart Scheduler"
+      },
+      "description": {
+        "en": "Web application to optimize and organize class schedules by entering course data and constraints. Built with React and styled with Tailwind.",
+        "es": "Aplicación web para optimizar y organizar horarios académicos ingresando datos de cursos y restricciones. Desarrollada con React y estilizada con Tailwind."
+      },
+      "date": {
+        "en": "February 2025 - March 2025",
+        "es": "Febrero 2025 - Marzo 2025"
+      },
+      "image": "smartscheduler.png",
+      "url": "https://github.com/PieroD04/smart-scheduler"
+    },
+    {
+      "name": {
         "en": "Expense Tracker",
         "es": "Expense Tracker"
       },
@@ -122,8 +138,8 @@
         "es": "Juego educativo que simula la protección de una ciudad contra un virus propagado por zombies, desarrollado en C++ con Windows Forms y aplicando principios POO."
       },
       "date": {
-          "en": "August 2022 - November 2022",
-          "es": "Agosto 2022 - Noviembre 2022"
+        "en": "August 2022 - November 2022",
+        "es": "Agosto 2022 - Noviembre 2022"
       },
       "image": "limadefender.jpeg",
       "url": "https://github.com/PieroD04/LimaDefender"
