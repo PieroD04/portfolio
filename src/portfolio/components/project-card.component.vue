@@ -35,13 +35,13 @@ const getImagePath = (image) => {
         <pv-button class="project-link" as="a" :href="project.url" :label="t('project-button')" icon="pi pi-search"/>
       </div>
     </template>
-
   </pv-card>
 </template>
 <style scoped>
 .project-card{
   padding: 1rem;
   margin: 1rem;
+  min-height: 36rem;
 }
 
 .card-footer{
