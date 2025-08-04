@@ -1,6 +1,22 @@
 {
   "projects": [
     {
+    "name": {
+      "en": "AgroTech",
+      "es": "AgroTech"
+    },
+    "description": {
+      "en": "Platform developed to connect agricultural producers with advisors. Includes testing with JUnit, BDD with Cucumber, and CI/CD pipelines. Added forum and dark mode through experiments.",
+      "es": "Plataforma desarrollada para conectar productores agrícolas con asesores. Incluye pruebas con JUnit, BDD con Cucumber y pipelines CI/CD. Se añadió un foro y modo oscuro mediante experimentación."
+    },
+    "date": {
+      "en": "April 2025 - July 2025",
+      "es": "Abril 2025 - Julio 2025"
+    },
+    "image": "agrotech.png",
+    "url": "https://github.com/PieroD04/agrotech"
+    },
+    {
       "name": {
         "en": "Smart Scheduler",
         "es": "Smart Scheduler"
