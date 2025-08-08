@@ -41,7 +41,6 @@ const getImagePath = (image) => {
 .project-card{
   padding: 1rem;
   margin: 1rem;
-  min-height: 36rem;
 }
 
 .card-footer{
