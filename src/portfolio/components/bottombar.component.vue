@@ -9,7 +9,7 @@ const { t } = useI18n();
       <!--img alt="logo" src="../../assets/icons/logo.ico" width="40" height="40"/-->
     </template>
     <template #center>
-      <p>{{ t('copyright')}}</p>
+      <p>{{ t('copyright', { year: new Date().getFullYear() }) }}</p>
     </template>
     <template #end>
 

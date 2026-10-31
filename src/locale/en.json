@@ -39,5 +39,5 @@
   "invalid-message": "Please enter a message",
   "success-message": "Message sent successfully",
   "error-message": "An error occurred while sending the message",
-  "copyright": "Copyright © 2025. All Rights Reserved. Developed by Piero Delgado"
+  "copyright": "Copyright © {year}. All Rights Reserved. Developed by Piero Delgado"
 }
