@@ -19,7 +19,7 @@ const { t } = useI18n();
       </div>
     </div>
     <div id="hero-image">
-      <img src="/assets/images/hero-image.jpeg" alt="Piero Delgado"/>
+      <img src="/assets/images/hero-image.webp" alt="Piero Delgado" width="704" height="704" fetchpriority="high"/>
     </div>
   </section>
 </template>
@@ -74,6 +74,7 @@ const { t } = useI18n();
 
   & img {
     width: 100%;
+    height: auto;
     max-width: 8rem;
     aspect-ratio: 1;
     border-radius: 50%;
