@@ -2,14 +2,14 @@ import { createApp } from 'vue'
 import { createI18n } from "vue-i18n";
 import App from './App.vue'
 import PrimeVue from 'primevue/config';
-import laraBase from '@primevue/themes/lara/base';
-import laraButton from '@primevue/themes/lara/button';
-import laraCard from '@primevue/themes/lara/card';
-import laraInputText from '@primevue/themes/lara/inputtext';
-import laraTextarea from '@primevue/themes/lara/textarea';
-import laraMessage from '@primevue/themes/lara/message';
-import laraToast from '@primevue/themes/lara/toast';
-import laraRipple from '@primevue/themes/lara/ripple';
+import laraBase from '@primeuix/themes/lara/base';
+import laraButton from '@primeuix/themes/lara/button';
+import laraCard from '@primeuix/themes/lara/card';
+import laraInputText from '@primeuix/themes/lara/inputtext';
+import laraTextarea from '@primeuix/themes/lara/textarea';
+import laraMessage from '@primeuix/themes/lara/message';
+import laraToast from '@primeuix/themes/lara/toast';
+import laraRipple from '@primeuix/themes/lara/ripple';
 import Button from "primevue/button";
 import Card from "primevue/card";
 import ToastService from 'primevue/toastservice';

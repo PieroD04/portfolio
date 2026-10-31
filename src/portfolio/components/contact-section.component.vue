@@ -64,6 +64,7 @@ const onFormSubmit = async (e) => {
     const success = await FormService.sendForm(formData);
     if (success) {
       e.reset();
+      botField.value = '';
     }
 
     toast.add({
@@ -133,7 +134,8 @@ const onFormSubmit = async (e) => {
       </div>
     </div>
 
-    <pv-toast position="bottom-right"/>
+    <!-- PrimeVue's toast is a fixed 25rem; shrink it on phones so it keeps the same 20px gap on both sides -->
+    <pv-toast position="bottom-right" style="width: min(25rem, calc(100vw - 40px))"/>
   </section>
 </template>
 
