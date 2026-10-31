@@ -20,6 +20,7 @@ const initialValues = ref({
 });
 
 const isSubmitting = ref(false);
+const botField = ref('');
 // a field shows its error only from a send attempt until it becomes valid; clearing it again stays quiet until the next send
 const showError = ref({ name: false, email: false, message: false });
 
@@ -57,7 +58,8 @@ const onFormSubmit = async (e) => {
     const formData = {
       name: e.states.name?.value,
       email: e.states.email?.value,
-      message: e.states.message?.value
+      message: e.states.message?.value,
+      'bot-field': botField.value
     };
     const success = await FormService.sendForm(formData);
     if (success) {
@@ -124,6 +126,8 @@ const onFormSubmit = async (e) => {
               <pv-message v-if="showError.message && $form.message?.invalid" severity="error" size="small" variant="simple">{{ $form.message.error.message }}</pv-message>
             </div>
           </div>
+          <!-- honeypot: invisible to people, bots that fill it get their submission dropped by Netlify -->
+          <input v-model="botField" name="bot-field" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true"/>
           <pv-button :disabled="isSubmitting" type="submit" :label="t('contact-button')" />
         </pv-form>
       </div>
@@ -134,6 +138,11 @@ const onFormSubmit = async (e) => {
 </template>
 
 <style scoped>
+.honeypot{
+  position: absolute;
+  left: -9999px;
+}
+
 .section-title::after{
   margin-left: auto;
   margin-right: auto;

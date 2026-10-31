@@ -43,6 +43,10 @@
     </script>
   </head>
   <body>
+    <!-- Netlify only detects forms in the static HTML, so this copy registers the Vue contact form at deploy time -->
+    <form name="contact" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input name="name"><input name="email"><textarea name="message"></textarea><input name="bot-field">
+    </form>
     <div id="app"></div>
     <script type="module" src="/src/main.js"></script>
   </body>

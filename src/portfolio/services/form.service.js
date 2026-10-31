@@ -1,22 +1,15 @@
 export class FormService {
-    static scriptURL = import.meta.env.VITE_FORM_SCRIPT_URL
-
+    // Netlify Forms catches POSTs to the site that carry the registered form-name (see index.html)
     static async sendForm(formData) {
         try {
-            const response = await fetch(this.scriptURL, {
+            const response = await fetch('/', {
                 method: 'POST',
-                body: new URLSearchParams(formData),
+                body: new URLSearchParams({ 'form-name': 'contact', ...formData }),
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 }
             });
-
-            const data = await response.json();
-            if (data.result === 'success') {
-                return true;
-            } else {
-                return false;
-            }
+            return response.ok;
         } catch (error) {
             return false;
         }
