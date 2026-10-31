@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- start the profile photo download with the HTML instead of waiting for the JS bundle -->
     <link rel="preload" as="image" href="/assets/images/hero-image.webp" fetchpriority="high">
+    <!-- icon font is only requested once Vue renders an icon; preloading avoids icons popping in late -->
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="./node_modules/primeicons/fonts/primeicons.woff2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap">

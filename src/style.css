@@ -28,6 +28,12 @@ body{
     scroll-margin-top: 5rem;
 }
 
+/* reserve each icon's box before the icon font loads, so buttons don't change width when it arrives */
+.pi{
+    width: 1em;
+    height: 1em;
+}
+
 h1, h2, h3 {
     margin: 1rem 0;
 }
