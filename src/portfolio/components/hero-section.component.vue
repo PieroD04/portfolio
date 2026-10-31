@@ -18,7 +18,7 @@ const { t } = useI18n();
       </div>
     </div>
     <div id="hero-image">
-      <img src="/assets/images/hero-image.jpeg" alt="hero image"/>
+      <img src="/assets/images/hero-image.jpeg" alt="Piero Delgado"/>
     </div>
   </section>
 </template>
