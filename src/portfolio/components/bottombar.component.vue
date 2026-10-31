@@ -4,22 +4,20 @@ const { t } = useI18n();
 </script>
 
 <template>
-  <pv-toolbar id="bottombar">
-    <template #start>
-      <!--img alt="logo" src="../../assets/icons/logo.ico" width="40" height="40"/-->
-    </template>
-    <template #center>
-      <p>{{ t('copyright', { year: new Date().getFullYear() }) }}</p>
-    </template>
-    <template #end>
-
-    </template>
-  </pv-toolbar>
+  <footer id="bottombar">
+    <p>{{ t('copyright', { year: new Date().getFullYear() }) }}</p>
+  </footer>
 </template>
 
 <style scoped>
 #bottombar{
-  border: 0;
-  border-radius: 0;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  background: var(--p-content-background);
+  border-top: 1px solid var(--p-content-border-color);
+}
+
+p{
+  font-size: 0.85rem;
 }
 </style>

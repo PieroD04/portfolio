@@ -2,16 +2,17 @@ import { createApp } from 'vue'
 import { createI18n } from "vue-i18n";
 import App from './App.vue'
 import PrimeVue from 'primevue/config';
-import Lara from '@primevue/themes/lara'
+import laraBase from '@primevue/themes/lara/base';
+import laraButton from '@primevue/themes/lara/button';
+import laraCard from '@primevue/themes/lara/card';
+import laraInputText from '@primevue/themes/lara/inputtext';
+import laraTextarea from '@primevue/themes/lara/textarea';
+import laraMessage from '@primevue/themes/lara/message';
+import laraToast from '@primevue/themes/lara/toast';
+import laraRipple from '@primevue/themes/lara/ripple';
 import Button from "primevue/button";
-import Toolbar from "primevue/toolbar";
 import Card from "primevue/card";
-import Toast from "primevue/toast";
 import ToastService from 'primevue/toastservice';
-import TextArea from "primevue/textarea";
-import Message from "primevue/message";
-import InputText from "primevue/inputtext";
-import Form from "@primevue/forms/form";
 import './style.css'
 import 'primeicons/primeicons.css';
 import en from './locale/en.json'
@@ -33,7 +34,18 @@ const i18n = createI18n({
 app.use(PrimeVue, {
     ripple: true,
     theme: {
-        preset: Lara,
+        preset: {
+            ...laraBase,
+            components: {
+                button: laraButton,
+                card: laraCard,
+                inputtext: laraInputText,
+                textarea: laraTextarea,
+                message: laraMessage,
+                toast: laraToast,
+                ripple: laraRipple
+            }
+        },
         options: {
             darkModeSelector: '.dark-mode'
         }
@@ -43,11 +55,5 @@ app.use(i18n);
 app.use(router);
 app.use(ToastService);
 app.component('pv-button', Button);
-app.component('pv-toolbar', Toolbar);
 app.component('pv-card', Card);
-app.component('pv-toast', Toast);
-app.component('pv-message', Message);
-app.component('pv-inputtext', InputText);
-app.component('pv-textarea', TextArea);
-app.component('pv-form', Form);
 app.mount('#app')

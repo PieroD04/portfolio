@@ -4,6 +4,12 @@ const { t } = useI18n();
 import { ref } from 'vue';
 import { useToast } from 'primevue/usetoast';
 import {FormService} from "@/portfolio/services/form.service.js";
+// registered here instead of globally so they ship in this section's lazy-loaded chunk
+import PvForm from "@primevue/forms/form";
+import PvInputtext from "primevue/inputtext";
+import PvTextarea from "primevue/textarea";
+import PvMessage from "primevue/message";
+import PvToast from "primevue/toast";
 
 const toast = useToast();
 
