@@ -1,0 +1,34 @@
+{
+  "experience": [
+    {
+      "role": {
+        "en": "Android Developer Intern",
+        "es": "Android Developer Intern"
+      },
+      "company": "Fitia (YC S21)",
+      "date": {
+        "en": "November 2025 - Present",
+        "es": "Noviembre 2025 - Actualidad"
+      },
+      "location": {
+        "en": "Lima, Peru · Hybrid",
+        "es": "Lima, Perú · Híbrido"
+      },
+      "highlights": {
+        "en": [
+          "Build and improve Fitia's Android app, a nutrition and meal-planning platform for users across Latin America and the United States.",
+          "Implementing end-to-end (E2E) tests with Maestro to catch regressions before each release.",
+          "Contribute to new features, fix bugs and improve the UI and behavior of multiple screens using Kotlin and Jetpack Compose.",
+          "Collaborate with product, design and backend teams in a fast-paced startup environment."
+        ],
+        "es": [
+          "Desarrollo y mejoro la aplicación Android de Fitia, una plataforma de nutrición y planificación de comidas con usuarios en Latinoamérica y Estados Unidos.",
+          "Implemento pruebas end-to-end (E2E) con Maestro para detectar regresiones antes de cada lanzamiento.",
+          "Contribuyo al desarrollo de nuevas funcionalidades, corrijo errores y mejoro la interfaz y el comportamiento de múltiples pantallas con Kotlin y Jetpack Compose.",
+          "Colaboro con los equipos de producto, diseño y backend en un entorno de startup de ritmo acelerado."
+        ]
+      },
+      "skills": ["Kotlin", "Jetpack Compose", "Maestro", "Coroutines", "Hilt", "Firebase"]
+    }
+  ]
+}

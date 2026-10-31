@@ -13,7 +13,7 @@ const { t } = useI18n();
       </h3>
       <p>{{t("hero-description")}}</p>
       <div id="hero-button">
-        <pv-button as="a" href="https://drive.google.com/file/d/1WYWNDDyr6G3QGURVftQ60Iqbgh_EEjZd/view?usp=sharing" target="_blank" rel="noopener"
+        <pv-button as="a" :href="t('hero-cv-url')" target="_blank" rel="noopener"
                    :label="t('hero-button')" severity="danger" icon="pi pi-file-pdf" style="text-decoration: none;" raised/>
       </div>
     </div>
