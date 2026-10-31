@@ -4,8 +4,8 @@ import Homepage from '@/portfolio/pages/homepage.component.vue';
 export const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: '/', component: Homepage },
-        { path: '/projects', component: () => import('@/portfolio/pages/projects.component.vue') },
+        { path: '/', component: Homepage, meta: { title: 'Piero Delgado | Software Engineer' } },
+        { path: '/projects', component: () => import('@/portfolio/pages/projects.component.vue'), meta: { title: 'Projects | Piero Delgado' } },
         { path: '/:pathMatch(.*)*', redirect: '/' }
     ],
     scrollBehavior(to, from, savedPosition) {
@@ -22,6 +22,12 @@ export const router = createRouter({
         }
         return { top: 0 };
     }
+});
+
+// every route shares index.html, so point the canonical at the real URL or Google treats /projects as a copy of /
+router.afterEach(to => {
+    document.title = to.meta.title;
+    document.querySelector('link[rel="canonical"]').href = 'https://pierodelgado.dev' + to.path;
 });
 
 // polls up to 3s, enough for the contact chunk on a slow connection
