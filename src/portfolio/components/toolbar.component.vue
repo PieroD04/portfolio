@@ -1,28 +1,24 @@
 <script setup>
 import { onMounted, ref } from 'vue';
-import enIcon from '/assets/icons/en.svg';
-import esIcon from '/assets/icons/es.svg';
 import { useI18n } from 'vue-i18n';
 const { t, locale } = useI18n();
 
-const selectedLanguage = ref(localStorage.getItem('language') || 'en');
-locale.value = selectedLanguage.value;
+locale.value = localStorage.getItem('language') || 'en';
 
 const isDarkMode = ref(localStorage.getItem('theme') === 'dark');
-const languages = ref([
-  {
-    label: 'English',
-    code: 'en'
-  },
-  {
-    label: 'Español',
-    code: 'es'
-  }
-]);
+const isMenuOpen = ref(false);
+const languages = ['en', 'es'];
 
-const changeLanguage = (event) => {
-  locale.value = event;
-  localStorage.setItem('language', event);
+const navLinks = [
+  { target: 'experience-section', label: 'experience-title' },
+  { target: 'knowledge-section', label: 'knowledge-title' },
+  { target: 'project-section', label: 'projects-title' },
+  { target: 'contact-section', label: 'nav-contact' }
+];
+
+const changeLanguage = (code) => {
+  locale.value = code;
+  localStorage.setItem('language', code);
 }
 
 function toggleDarkMode() {
@@ -37,33 +33,52 @@ onMounted(() => {
     document.documentElement.classList.add('dark-mode');
   }
 });
-
-
 </script>
 
 <template>
-  <pv-toolbar id="navbar" aria-label="Main Navigation">
-    <template #start>
-      <div class="logo">
-        <!--img alt="logo" src="../../assets/icons/logo.ico" width="40" height="40" /-->
-        <h2>Piero Delgado</h2>
-      </div>
-    </template>
-    <template #center>
+  <header id="navbar">
+    <div id="navbar-bar">
+      <router-link to="/" class="logo" @click="isMenuOpen = false">
+        <img src="/favicon.svg" alt="Piero Delgado" width="36" height="36"/>
+      </router-link>
 
-    </template>
-    <template #end>
-      <pv-button style="margin-right: 0.5rem" icon="pi pi-lightbulb" @click="toggleDarkMode()" />
-      <pv-select v-model="selectedLanguage" :options="languages" option-label="label" option-value="code" @update:model-value="changeLanguage">
-        <template #option="language">
-          <div class="language-option">
-            <img :alt="`${language.option.label} flag`" :src="language.option.code === 'en' ? enIcon : esIcon" width="20" height="20" />
-            <span>{{ language.option.label }}</span>
+      <nav class="nav-links desktop-only">
+        <router-link v-for="link in navLinks" :key="link.target" :to="{ path: '/', hash: `#${link.target}` }">{{ t(link.label) }}</router-link>
+      </nav>
+
+      <div class="nav-actions desktop-only">
+        <pv-button :icon="isDarkMode ? 'pi pi-sun' : 'pi pi-moon'" :aria-label="t('nav-theme')" text rounded @click="toggleDarkMode"/>
+        <div class="language-switch">
+          <pv-button v-for="code in languages" :key="code" :label="code.toUpperCase()" size="small"
+                     :outlined="locale !== code" @click="changeLanguage(code)"/>
+        </div>
+      </div>
+
+      <button type="button" class="mobile-only menu-toggle" :aria-label="t('nav-menu')" :aria-expanded="isMenuOpen"
+              @click="isMenuOpen = !isMenuOpen">
+        <i :class="isMenuOpen ? 'pi pi-times' : 'pi pi-bars'"/>
+      </button>
+    </div>
+
+    <Transition name="menu">
+      <div v-if="isMenuOpen" id="mobile-menu" class="mobile-only">
+        <nav class="nav-links">
+          <router-link v-for="link in navLinks" :key="link.target" :to="{ path: '/', hash: `#${link.target}` }" @click="isMenuOpen = false">{{ t(link.label) }}</router-link>
+        </nav>
+        <div class="menu-row">
+          <span>{{ t('nav-theme') }}</span>
+          <pv-button :icon="isDarkMode ? 'pi pi-sun' : 'pi pi-moon'" :aria-label="t('nav-theme')" text rounded @click="toggleDarkMode"/>
+        </div>
+        <div class="menu-row">
+          <span>{{ t('nav-language') }}</span>
+          <div class="language-switch">
+            <pv-button v-for="code in languages" :key="code" :label="code.toUpperCase()" size="small"
+                       :outlined="locale !== code" @click="changeLanguage(code)"/>
           </div>
-        </template>
-      </pv-select>
-    </template>
-  </pv-toolbar>
+        </div>
+      </div>
+    </Transition>
+  </header>
 </template>
 
 <style scoped>
@@ -72,29 +87,125 @@ onMounted(() => {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 6px;
-  border-radius: 0;
-  opacity: 0.95;
-  backdrop-filter: blur(5px);
-  border: 0;
   z-index: 10;
+  background: color-mix(in srgb, var(--p-content-background) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--p-content-border-color);
 }
 
-h2 {
-  font-size: 1.5rem;
-  font-weight: 300;
+#navbar-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: min(1100px, calc(100% - 2rem));
+  height: 3.5rem;
+  margin: 0 auto;
 }
 
 .logo {
   display: flex;
-  gap: 10px;
-  align-items: center;
 }
 
-.language-option {
+.nav-links a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--p-primary-color);
+}
+
+.nav-actions, .language-switch {
   display: flex;
-  gap: 5px;
   align-items: center;
+  gap: 0.25rem;
 }
 
+.nav-actions {
+  gap: 0.75rem;
+}
+
+#mobile-menu {
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+  padding: 0.5rem 0 1rem;
+}
+
+#mobile-menu .nav-links {
+  display: flex;
+  flex-direction: column;
+}
+
+#mobile-menu .nav-links a {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--p-content-border-color);
+}
+
+.menu-enter-active,
+.menu-leave-active {
+  overflow: hidden;
+  transition: max-height 0.25s ease, opacity 0.2s ease, padding 0.25s ease;
+}
+
+/* max-height just needs to exceed the menu's real height */
+.menu-enter-to,
+.menu-leave-from {
+  max-height: 24rem;
+}
+
+.menu-enter-from,
+.menu-leave-to {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-enter-active,
+  .menu-leave-active {
+    transition: none;
+  }
+}
+
+.menu-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 0.75rem;
+}
+
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--p-text-color);
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+.desktop-only {
+  display: none !important;
+}
+
+@media screen and (min-width: 768px) {
+  .desktop-only {
+    display: flex !important;
+  }
+
+  .mobile-only {
+    display: none !important;
+  }
+
+  .nav-links {
+    gap: 2rem;
+  }
+}
 </style>

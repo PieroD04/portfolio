@@ -6,22 +6,17 @@ import Lara from '@primevue/themes/lara'
 import Button from "primevue/button";
 import Toolbar from "primevue/toolbar";
 import Card from "primevue/card";
-import Select from "primevue/select";
-import Carousel from "primevue/carousel";
 import Toast from "primevue/toast";
 import ToastService from 'primevue/toastservice';
 import TextArea from "primevue/textarea";
 import Message from "primevue/message";
 import InputText from "primevue/inputtext";
 import Form from "@primevue/forms/form";
-import Accordion from "primevue/accordion";
-import AccordionContent from "primevue/accordioncontent";
-import AccordionPanel from "primevue/accordionpanel";
-import AccordionHeader from "primevue/accordionheader";
 import './style.css'
 import 'primeicons/primeicons.css';
 import en from './locale/en.json'
 import es from './locale/es.json'
+import { router } from './router.js'
 
 
 const app = createApp(App);
@@ -45,19 +40,14 @@ app.use(PrimeVue, {
     }
 });
 app.use(i18n);
+app.use(router);
 app.use(ToastService);
 app.component('pv-button', Button);
 app.component('pv-toolbar', Toolbar);
 app.component('pv-card', Card);
-app.component('pv-select', Select);
-app.component('pv-carousel', Carousel);
 app.component('pv-toast', Toast);
 app.component('pv-message', Message);
 app.component('pv-inputtext', InputText);
 app.component('pv-textarea', TextArea);
 app.component('pv-form', Form);
-app.component('pv-accordion', Accordion);
-app.component('pv-accordioncontent', AccordionContent);
-app.component('pv-accordionpanel', AccordionPanel);
-app.component('pv-accordionheader', AccordionHeader);
 app.mount('#app')

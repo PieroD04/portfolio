@@ -1,7 +1,8 @@
 {
-  "Programming Languages": ["C#", "C++", "Dart", "Java", "JavaScript", "Kotlin", "Python", "TypeScript"],
-  "Frameworks": ["Angular", "ASP.NET Core", "Django", "Flask", "Jetpack Compose", "React", "Spring Boot", "Vue.js"],
-  "Web Technologies": ["CSS", "HTML", "Tailwind"],
-  "Databases": ["MongoDB", "MySQL", "PostgreSQL", "SQL Server 2019"],
-  "Methodologies": ["Domain-Driven Design", "Gitflow", "Scrum"]
+  "Programming Languages": ["Kotlin", "Java", "TypeScript", "JavaScript", "Python", "C#", "C++"],
+  "Mobile": ["Jetpack Compose", "Coroutines", "Hilt", "Firebase Analytics"],
+  "Frameworks": ["Spring Boot", "ASP.NET Core", "Django", "React", "Vue.js", "Angular"],
+  "Web Technologies": ["HTML", "CSS", "Tailwind"],
+  "Databases": ["MongoDB", "MySQL", "PostgreSQL", "SQL Server", "SQLite"],
+  "Methodologies": ["Scrum", "Domain-Driven Design", "Gitflow", "CI/CD"]
 }

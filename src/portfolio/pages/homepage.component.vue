@@ -7,28 +7,9 @@ import ExperienceSection from '../components/experience-section.component.vue';
 </script>
 
 <template>
-  <hero-section id="hero-section"/>
-  <experience-section id="experience-section"/>
-  <knowledge-section id="knowledge-section"/>
-  <project-section id="project-section"/>
-  <contact-section id="contact-section"/>
+  <hero-section/>
+  <experience-section/>
+  <knowledge-section/>
+  <project-section/>
+  <contact-section/>
 </template>
-
-<style scoped>
-
-#hero-section, #experience-section, #knowledge-section {
-  width: 70%;
-  margin: 5rem auto;
-}
-
-@media (max-width: 768px) {
-  #hero-section {
-    margin-top: 10rem;
-  }
-
-  #hero-section, #experience-section, #knowledge-section {
-    width: 90%;
-  }
-}
-
-</style>

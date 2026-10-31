@@ -1,9 +1,21 @@
 {
-  "Design": ["Figma", "Canva"],
-  "Version Control": ["Git", "GitHub"],
-  "Development Tools": ["IntelliJ IDEA", "WebStorm", "Rider", "Visual Studio Code", "Visual Studio", "Android Studio"],
-  "Project Management": ["Trello", "Miro"],
-  "Deployment": ["Docker"],
-  "Testing": ["Postman", "Swagger"],
-  "Office Tools": ["Microsoft Office"]
+  "Development Tools": [
+    "Android Studio",
+    "IntelliJ IDEA",
+    "Visual Studio Code"
+  ],
+  "Testing": [
+    "Maestro",
+    "JUnit",
+    "Cucumber",
+    "Postman"
+  ],
+  "Version Control": [
+    "Git",
+    "GitHub",
+    "GitHub Actions"
+  ],
+  "Deployment": [
+    "Docker"
+  ]
 }

@@ -1,67 +1,40 @@
 <script setup>
-import { ref, watch} from 'vue';
+import { computed } from 'vue';
 import { ProjectService } from "../services/project.service.js";
 import ProjectCard from "./project-card.component.vue";
 import { useI18n } from 'vue-i18n';
 const { locale, t } = useI18n();
 
-const projects = ref([]);
-
-watch(locale, (newLang) => {
-  const lang = t('lang');  // Get the current language
-  projects.value = ProjectService.getProjects(lang);  // Update the projects based on the new language
-}, { immediate: true });
-
-const responsiveOptions = ref([
-  {
-    breakpoint: '1400px',
-    numVisible: 2,
-    numScroll: 2
-  },
-  {
-    breakpoint: '767px',
-    numVisible: 1,
-    numScroll: 1
-  }
-]);
-
+// projects.json is ordered newest first; the full list lives on /projects
+const projects = computed(() => ProjectService.getProjects(locale.value).slice(0, 3));
 </script>
 
 <template>
-  <section id="projects-section">
-    <div id="projects-intro">
-      <h2>{{t("projects-title")}}</h2>
-      <h3>{{t("projects-subtitle")}}</h3>
+  <section id="project-section">
+    <h2 class="section-title">{{t("projects-title")}}</h2>
+    <div id="project-grid">
+      <project-card v-for="project in projects" :key="project.url" :project="project"/>
     </div>
-    <div id="project-carousel">
-      <pv-carousel :value="projects" :num-visible="3" :num-scroll="3" :responsive-options="responsiveOptions">
-        <template #item="project">
-          <project-card :project="project.data"/>
-        </template>
-      </pv-carousel>
+    <div id="view-all">
+      <pv-button as="router-link" to="/projects" :label="t('projects-view-all')" icon="pi pi-arrow-right" icon-pos="right" class="view-all-link"/>
     </div>
   </section>
 </template>
 
 <style scoped>
-#projects-section{
+#project-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+  gap: 1.5rem;
+}
+
+#view-all{
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
-#projects-intro{
-  text-align: center;
-}
-
-#project-carousel{
-  width: 90%;
-  margin: 0 auto;
-}
-
-@media screen and (max-width: 1024px) {
-  #projects-intro{
-    margin: 0 1rem;
-  }
+.view-all-link{
+  text-decoration: none;
 }
 </style>

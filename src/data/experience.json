@@ -6,6 +6,7 @@
         "es": "Android Developer Intern"
       },
       "company": "Fitia (YC S21)",
+      "logo": "fitia-logo.png",
       "date": {
         "en": "November 2025 - Present",
         "es": "Noviembre 2025 - Actualidad"
@@ -28,7 +29,7 @@
           "Colaboro con los equipos de producto, diseño y backend en un entorno de startup de ritmo acelerado."
         ]
       },
-      "skills": ["Kotlin", "Jetpack Compose", "Maestro", "Coroutines", "Hilt", "Firebase"]
+      "skills": ["Kotlin", "Jetpack Compose", "Maestro", "Coroutines", "Hilt", "Firebase Analytics"]
     }
   ]
 }

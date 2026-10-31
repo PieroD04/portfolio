@@ -10,7 +10,10 @@ export class ProjectService {
                 project.description[language],
                 project.date[language],
                 project.image,
-                project.url
+                project.url,
+                project.tags,
+                project.role?.[language],
+                project.highlights?.[language] ?? []
             ));
         } catch (error) {
             console.error('Error loading projects:', error);

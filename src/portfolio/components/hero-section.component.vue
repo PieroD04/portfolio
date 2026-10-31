@@ -6,15 +6,16 @@ const { t } = useI18n();
 <template>
   <section id="hero-section">
     <div id="hero-information">
-      <h1>{{t("hero-title")}}</h1>
-      <h3 style="display: flex; align-items: center; justify-content: center;">
-        <i class="pi pi-spin pi-cog" style="font-size: 1.5rem; margin-right: 8px;" />
-        {{ t("hero-subtitle") }}
-      </h3>
-      <p>{{t("hero-description")}}</p>
-      <div id="hero-button">
+      <h1>Piero Delgado</h1>
+      <h2 class="hero-role">{{ t("hero-subtitle") }}</h2>
+      <p class="hero-description">{{ t("hero-description") }}</p>
+      <div id="hero-buttons">
         <pv-button as="a" :href="t('hero-cv-url')" target="_blank" rel="noopener"
-                   :label="t('hero-button')" severity="danger" icon="pi pi-file-pdf" style="text-decoration: none;" raised/>
+                   :label="t('hero-button')" icon="pi pi-file-pdf" class="hero-link"/>
+        <pv-button as="a" href="https://github.com/PieroD04" target="_blank" rel="noopener"
+                   icon="pi pi-github" label="GitHub" severity="secondary" outlined class="hero-link"/>
+        <pv-button as="a" href="https://www.linkedin.com/in/piero-delgado/" target="_blank" rel="noopener"
+                   icon="pi pi-linkedin" label="LinkedIn" severity="secondary" outlined class="hero-link"/>
       </div>
     </div>
     <div id="hero-image">
@@ -26,84 +27,93 @@ const { t } = useI18n();
 <style scoped>
 #hero-section{
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  margin: 5rem;
-  height: 100%;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 2rem;
   text-align: center;
+  margin-top: 7rem;
 }
 
-#hero-information{
-  display: flex;
-  text-align: center;
-  flex-direction: column;
-  justify-content: center;
-  width: 80%;
-  margin: 0 auto;
+#hero-information h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
 
-  & p {
-    width: 90%;
-    margin: 0 auto 1rem;
-  }
+.hero-role {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin: 0.5rem 0 1.5rem;
+  color: var(--p-text-muted-color);
+}
+
+.hero-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 38rem;
+  margin: 0 auto;
+}
+
+#hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.hero-link {
+  text-decoration: none;
 }
 
 #hero-image {
-  padding: 5rem;
+  display: flex;
+  justify-content: center;
+  order: -1;
 
   & img {
-    text-align: center;
-    width: 25rem;
-    height: 25rem;
+    width: 100%;
+    max-width: 8rem;
+    aspect-ratio: 1;
     border-radius: 50%;
     object-fit: cover;
+    border: 4px solid var(--p-primary-color);
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) {
   #hero-section{
-    display: flex;
-    flex-direction: column;
-    margin: 5rem 1rem 1rem;
+    grid-template-columns: 3fr 2fr;
+    gap: 3rem;
+    text-align: left;
+    min-height: calc(100vh - 10rem);
+    margin-top: 6rem;
+  }
+
+  #hero-information h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-role {
+    font-size: 1.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    margin: 0;
+  }
+
+  #hero-buttons {
+    justify-content: flex-start;
   }
 
   #hero-image {
-    padding: 3rem;
+    order: 0;
 
     & img {
-      width: 15rem;
-      height: 15rem;
-    }
-  }
-
-}
-
-@media screen and (max-width: 768px) {
-   #hero-information{
-    width: 90%;
-    margin: 0 auto;
-
-    & p {
-      width: 100%;
-      margin: 0 auto 1rem;
-    }
-  }
-
-  #hero-image {
-    padding: 3rem;
-
-    & img {
-      width: 15rem;
-      height: 15rem;
-    }
-  }
-}
-
-@media screen and (max-width: 400px) {
-  #hero-image {
-    padding: 1rem;
-
-    & img {
-      width: 8rem;
-      height: 8rem;
+      max-width: 22rem;
+      border-width: 6px;
     }
   }
 }

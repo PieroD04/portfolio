@@ -15,21 +15,26 @@ const jobs = computed(() => experienceData.experience.map(job => ({
 
 <template>
   <section id="experience-section">
-    <div id="experience-intro">
-      <h2>{{t("experience-title")}}</h2>
-      <h3>{{t("experience-subtitle")}}</h3>
-    </div>
+    <h2 class="section-title">{{t("experience-title")}}</h2>
     <pv-card v-for="job in jobs" :key="job.company" class="experience-card">
-      <template #title>{{job.role}} · {{job.company}}</template>
+      <template #title>
+        <div class="experience-header">
+          <img :src="`/assets/images/${job.logo}`" :alt="`${job.company} logo`" class="experience-logo" width="48" height="48"/>
+          <div>
+            <span class="experience-role">{{job.role}}</span>
+            <span class="experience-company">{{job.company}}</span>
+          </div>
+        </div>
+      </template>
       <template #subtitle>
-        <p class="experience-date">{{job.date}} · {{job.location}}</p>
+        <span class="experience-meta">{{job.date}} · {{job.location}}</span>
       </template>
       <template #content>
         <ul>
           <li v-for="highlight in job.highlights" :key="highlight">{{highlight}}</li>
         </ul>
         <div class="experience-skills">
-          <span v-for="skill in job.skills" :key="skill" class="skill">{{skill}}</span>
+          <span v-for="skill in job.skills" :key="skill" class="tag">{{skill}}</span>
         </div>
       </template>
     </pv-card>
@@ -37,35 +42,74 @@ const jobs = computed(() => experienceData.experience.map(job => ({
 </template>
 
 <style scoped>
-#experience-intro{
-  text-align: center;
-}
-
 .experience-card{
-  padding: 1rem;
-  margin: 1rem 0;
+  border-left: 4px solid var(--p-primary-color);
 }
 
-.experience-date {
-  font-weight: 300;
+:deep(.p-card-body) {
+  padding: 1rem;
+}
+
+:deep(.p-card-title) {
+  font-size: 1.1rem;
+}
+
+.experience-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.experience-logo {
+  flex-shrink: 0;
+  border-radius: 12px;
+}
+
+.experience-role {
+  display: block;
+}
+
+.experience-company {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--p-primary-color);
+}
+
+.experience-meta {
+  display: block;
+  font-size: 0.85rem;
 }
 
 ul {
-  padding-left: 1.25rem;
-  line-height: 1.6;
+  padding-left: 1.1rem;
+  margin: 0.5rem 0 1rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+li + li {
+  margin-top: 0.4rem;
 }
 
 .experience-skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
-.skill {
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  background: var(--p-primary-color);
-  color: var(--p-primary-contrast-color);
+@media screen and (min-width: 768px) {
+  :deep(.p-card-body) {
+    padding: 1.5rem;
+  }
+
+  :deep(.p-card-title) {
+    font-size: 1.25rem;
+  }
+
+  ul {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
 }
 </style>

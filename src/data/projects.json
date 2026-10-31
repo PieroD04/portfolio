@@ -1,20 +1,43 @@
 {
   "projects": [
     {
-    "name": {
-      "en": "AgroTech",
-      "es": "AgroTech"
-    },
-    "description": {
-      "en": "Platform developed to connect agricultural producers with advisors. Includes testing with JUnit, BDD with Cucumber, and CI/CD pipelines. Added forum and dark mode through experiments.",
-      "es": "Plataforma desarrollada para conectar productores agrícolas con asesores. Incluye pruebas con JUnit, BDD con Cucumber y pipelines CI/CD. Se añadió un foro y modo oscuro mediante experimentación."
-    },
-    "date": {
-      "en": "April 2025 - July 2025",
-      "es": "Abril 2025 - Julio 2025"
-    },
-    "image": "agrotech.png",
-    "url": "https://github.com/PieroD04/agrotech"
+      "name": {
+        "en": "AgroTech",
+        "es": "AgroTech"
+      },
+      "description": {
+        "en": "Platform developed to connect agricultural producers with advisors. Includes testing with JUnit, BDD with Cucumber, and CI/CD pipelines. Added forum and dark mode through experiments.",
+        "es": "Plataforma desarrollada para conectar productores agrícolas con asesores. Incluye pruebas con JUnit, BDD con Cucumber y pipelines CI/CD. Se añadió un foro y modo oscuro mediante experimentación."
+      },
+      "date": {
+        "en": "April 2025 - July 2025",
+        "es": "Abril 2025 - Julio 2025"
+      },
+      "image": "agrotech.png",
+      "url": "https://github.com/PieroD04/agrotech",
+      "tags": [
+        "Spring Boot",
+        "JUnit",
+        "Cucumber",
+        "GitHub Actions",
+        "Docker"
+      ],
+      "role": {
+        "en": "Team Lead - Backend Developer",
+        "es": "Líder de equipo - Desarrollador Backend"
+      },
+      "highlights": {
+        "en": [
+          "Led the migration of a monolithic application to a microservices architecture using Spring Boot, Eureka for service discovery and an API Gateway for centralized routing.",
+          "Designed unit and integration tests with JUnit and implemented BDD tests with Cucumber to ensure software quality.",
+          "Implemented CI/CD with GitHub Actions and Docker to automate deployment and reduce manual errors."
+        ],
+        "es": [
+          "Dirigí la migración de una aplicación monolítica a una arquitectura de microservicios con Spring Boot, Eureka para el descubrimiento de servicios y un API Gateway para centralizar el enrutamiento.",
+          "Diseñé pruebas unitarias y de integración con JUnit e implementé pruebas BDD con Cucumber para asegurar la calidad del software.",
+          "Implementé prácticas de CI/CD con GitHub Actions y Docker para automatizar el despliegue y reducir errores manuales."
+        ]
+      }
     },
     {
       "name": {
@@ -30,7 +53,11 @@
         "es": "Febrero 2025 - Marzo 2025"
       },
       "image": "smartscheduler.png",
-      "url": "https://github.com/PieroD04/smart-scheduler"
+      "url": "https://github.com/PieroD04/smart-scheduler",
+      "tags": [
+        "React",
+        "Tailwind"
+      ]
     },
     {
       "name": {
@@ -46,7 +73,12 @@
         "es": "Enero 2025 - Febrero 2025"
       },
       "image": "expensetracker.png",
-      "url": "https://github.com/PieroD04/expense-tracker"
+      "url": "https://github.com/PieroD04/expense-tracker",
+      "tags": [
+        "Django",
+        "React",
+        "PostgreSQL"
+      ]
     },
     {
       "name": {
@@ -62,7 +94,28 @@
         "es": "Agosto 2024 - Noviembre 2024"
       },
       "image": "agrosupport.png",
-      "url": "https://github.com/PieroD04/agrosupport"
+      "url": "https://github.com/PieroD04/agrosupport",
+      "tags": [
+        "Kotlin",
+        "Jetpack Compose",
+        "Spring Boot"
+      ],
+      "role": {
+        "en": "Mobile Developer",
+        "es": "Desarrollador móvil"
+      },
+      "highlights": {
+        "en": [
+          "Designed an Android app in Kotlin to connect agricultural producers with industry specialists.",
+          "Implemented consultation scheduling, notifications and profile management, integrated with a backend over HTTP.",
+          "Applied Clean Architecture principles and the MVVM pattern to keep layers clearly separated and make new features easier to add."
+        ],
+        "es": [
+          "Diseñé una aplicación Android con Kotlin para conectar a productores agrícolas con especialistas del sector.",
+          "Implementé agendamiento de asesorías, notificaciones y gestión de perfiles, integrados con un backend mediante HTTP.",
+          "Apliqué arquitectura limpia y el patrón MVVM para mantener una separación clara de capas y facilitar nuevas funcionalidades."
+        ]
+      }
     },
     {
       "name": {
@@ -78,7 +131,11 @@
         "es": "Septiembre 2024 - Noviembre 2024"
       },
       "image": "datapathway.png",
-      "url": "https://github.com/PieroD04/algorithmic-complexity-assignment"
+      "url": "https://github.com/PieroD04/algorithmic-complexity-assignment",
+      "tags": [
+        "Python",
+        "Graph Algorithms"
+      ]
     },
     {
       "name": {
@@ -94,7 +151,11 @@
         "es": "Abril 2024 - Junio 2024"
       },
       "image": "agroconnect.png",
-      "url": "https://github.com/PieroD04/agroconnect"
+      "url": "https://github.com/PieroD04/agroconnect",
+      "tags": [
+        "Spring Boot",
+        "Angular"
+      ]
     },
     {
       "name": {
@@ -110,7 +171,29 @@
         "es": "Abril 2024 - Junio 2024"
       },
       "image": "cargoapp.png",
-      "url": "https://github.com/PieroD04/cargoapp"
+      "url": "https://github.com/PieroD04/cargoapp",
+      "tags": [
+        "C#",
+        "ASP.NET Core",
+        "Vue.js",
+        "Docker"
+      ],
+      "role": {
+        "en": "Team Lead - Full-Stack Developer",
+        "es": "Líder de equipo - Desarrollador Full-Stack"
+      },
+      "highlights": {
+        "en": [
+          "Led the development of a web platform for managing expenses and shipments for road freight companies.",
+          "Built trip optimization, expense tracking and real-time monitoring modules using C# with ASP.NET Core on the backend and Vue.js on the frontend.",
+          "Deployed the application by containerizing the frontend and backend with Docker and hosting them on cloud services."
+        ],
+        "es": [
+          "Lideré el desarrollo de una plataforma web para la gestión de gastos y envíos de empresas de transporte terrestre de mercancías.",
+          "Desarrollé módulos de optimización de viajes, seguimiento de gastos y monitoreo en tiempo real con C# y ASP.NET Core en el backend y Vue.js en el frontend.",
+          "Desplegué la aplicación contenerizando el frontend y el backend con Docker y alojándolos en servicios en la nube."
+        ]
+      }
     },
     {
       "name": {
@@ -126,7 +209,12 @@
         "es": "Agosto 2023 - Noviembre 2023"
       },
       "image": "psychopro.png",
-      "url": "https://github.com/PieroD04/psychomind"
+      "url": "https://github.com/PieroD04/psychomind",
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript"
+      ]
     },
     {
       "name": {
@@ -142,7 +230,11 @@
         "es": "Abril 2023 - Junio 2023"
       },
       "image": "shopsync.jpg",
-      "url": "https://github.com/PieroD04/shopsync"
+      "url": "https://github.com/PieroD04/shopsync",
+      "tags": [
+        "C++",
+        "Data Structures"
+      ]
     },
     {
       "name": {
@@ -158,7 +250,12 @@
         "es": "Agosto 2022 - Noviembre 2022"
       },
       "image": "limadefender.jpeg",
-      "url": "https://github.com/PieroD04/LimaDefender"
+      "url": "https://github.com/PieroD04/LimaDefender",
+      "tags": [
+        "C++",
+        "Windows Forms",
+        "OOP"
+      ]
     },
     {
       "name": {
@@ -174,7 +271,10 @@
         "es": "Abril 2022 - Junio 2022"
       },
       "image": "molino.png",
-      "url": "https://github.com/PieroD04/Nine-Mens-Morris"
+      "url": "https://github.com/PieroD04/Nine-Mens-Morris",
+      "tags": [
+        "C++"
+      ]
     }
   ]
 }

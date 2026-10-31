@@ -1,129 +1,93 @@
 <script setup>
 import { useI18n } from 'vue-i18n';
-import { onMounted, ref, watch } from "vue";
+import { computed } from "vue";
 import { KnowledgeService } from "../services/knowledge.service.js";
 const { locale, t } = useI18n();
 
-const technologies = ref([]);
-const certificates = ref([]);
-const tools = ref([]);
+const groups = computed(() => [
+  ...KnowledgeService.getTechnologies().map(tech => ({ category: tech.category, items: tech.technologies })),
+  ...KnowledgeService.getTools().map(tool => ({ category: tool.category, items: tool.tools }))
+]);
+const certificates = computed(() => KnowledgeService.getCertificates(locale.value));
 
-const loadKnowledge = () => {
-  const lang = locale.value === 'es' ? 'es' : 'en';
-  technologies.value = KnowledgeService.getTechnologies(lang);
-  certificates.value = KnowledgeService.getCertificates(lang);
-  tools.value = KnowledgeService.getTools(lang);
-};
-
-onMounted(() => {
-  loadKnowledge();
-});
-
-watch(() => locale.value, () => {
-  loadKnowledge();
-});
-
+const categoryKey = (category) => category.replaceAll(' ', '-').toLowerCase();
 </script>
 
 <template>
   <section id="knowledge-section">
-    <h2>{{ t('knowledge-title') }}</h2>
-    <h3>{{ t('knowledge-subtitle') }}</h3>
-    <div id="knowledge-accordion">
-      <pv-accordion :value="['0']" multiple>
-        <pv-accordionpanel value="0">
-          <pv-accordionheader>
-            <div class="accordion-header">
-              <i class="pi pi-wrench" /> {{ t('technologies-title') }}
-            </div>
-          </pv-accordionheader>
-          <pv-accordioncontent>
-            <ul>
-              <li v-for="(tech, index) in technologies" :key="index">
-                <strong>{{ t(tech.category.replace(' ', '-').toLowerCase()) }}:</strong>
-                {{ Array.isArray(tech.technologies) ? tech.technologies.join(', ') : tech.technologies }}
-              </li>
-            </ul>
-          </pv-accordioncontent>
-        </pv-accordionpanel>
-        <pv-accordionpanel value="1">
-          <pv-accordionheader>
-            <div class="accordion-header">
-              <i class="pi pi-book" /> {{ t('certificates-title') }}
-            </div>
-          </pv-accordionheader>
-          <pv-accordioncontent>
-            <ul>
-              <li v-for="certificate in certificates" :key="certificate.title">
-                <a :href="certificate.link"> <!--target="_blank" ref="noopener noreferrer"-->
-                  <strong>{{ certificate.title }}</strong> - {{ certificate.issuer }} ({{ certificate.date }})
-                </a>
-              </li>
-            </ul>
-          </pv-accordioncontent>
-        </pv-accordionpanel>
-        <pv-accordionpanel value="3">
-          <pv-accordionheader>
-            <div class="accordion-header">
-              <i class="pi pi-hammer" /> {{ t('tools-title') }}
-            </div>
-          </pv-accordionheader>
-          <pv-accordioncontent>
-            <ul>
-              <li v-for="(tool, index) in tools" :key="index">
-                <strong>{{ t(tool.category.replace(' ', '-').toLowerCase()) }}:</strong>
-                {{ Array.isArray(tool.tools) ? tool.tools.join(', ') : tool.tools }}
-              </li>
-            </ul>
-          </pv-accordioncontent>
-        </pv-accordionpanel>
-      </pv-accordion>
+    <h2 class="section-title">{{ t('knowledge-title') }}</h2>
+    <div id="skill-groups">
+      <div v-for="group in groups" :key="group.category" class="skill-group">
+        <h3>{{ t(categoryKey(group.category)) }}</h3>
+        <div class="skill-tags">
+          <span v-for="item in group.items" :key="item" class="tag">{{ item }}</span>
+        </div>
+      </div>
     </div>
+
+    <h3 id="certificates-title">{{ t('certificates-title') }}</h3>
+    <ul id="certificates">
+      <li v-for="certificate in certificates" :key="certificate.title">
+        <a :href="certificate.link" target="_blank" rel="noopener">
+          <i class="pi pi-verified"/>
+          <span><strong>{{ certificate.title }}</strong> · {{ certificate.issuer }} · {{ certificate.date }}</span>
+        </a>
+      </li>
+    </ul>
   </section>
 </template>
 
 <style scoped>
-#knowledge-section{
-  text-align: center;
-  margin-bottom: 3rem;
+#skill-groups{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+  gap: 1rem;
 }
 
-#knowledge-accordion{
-  width: 90%;
-  margin: 0 auto;
+.skill-group{
+  padding: 1.25rem;
+  border-radius: 12px;
+  background: var(--p-content-background);
+  border: 1px solid var(--p-content-border-color);
 }
 
-ul{
+.skill-group h3, #certificates-title{
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+}
+
+.skill-tags{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+#certificates-title{
+  margin-top: 2.5rem;
+}
+
+#certificates{
+  list-style: none;
+  padding: 0;
   margin: 0;
-  padding-left: 20px;
-  list-style: square;
-  text-align: left;
+  display: grid;
+  gap: 0.6rem;
 }
 
-ul li{
-  margin-bottom: 10px;
-}
-
-li strong{
-  color: var(--p-primary-color);
-}
-
-li {
-  color: var(--p-secondary-color);
-}
-
-.accordion-header{
+#certificates a{
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-}
-
-a {
-  color: var(--p-secondary-color);
+  gap: 0.6rem;
+  color: inherit;
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+#certificates a:hover{
+  color: var(--p-primary-color);
+}
+
+#certificates i{
+  color: var(--p-primary-color);
 }
 </style>

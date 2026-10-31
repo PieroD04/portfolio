@@ -14,6 +14,8 @@ const initialValues = ref({
 });
 
 const isSubmitting = ref(false);
+// a field shows its error only from a send attempt until it becomes valid; clearing it again stays quiet until the next send
+const showError = ref({ name: false, email: false, message: false });
 
 const resolver = ({ values }) => {
   const errors = {};
@@ -27,16 +29,20 @@ const resolver = ({ values }) => {
     errors.message = [{ message: t('invalid-message') }];
   }
 
+  for (const field in showError.value) {
+    if (!errors[field]) showError.value[field] = false;
+  }
+
   return {
     errors
   };
 }
 
 const onFormSubmit = async (e) => {
-  if (!e.valid) {
-    toast.add({ severity: 'error', summary: t('error-message'), life: 3000 });
-    return;
+  for (const field in showError.value) {
+    showError.value[field] = !!e.states[field]?.invalid;
   }
+  if (!e.valid) return;
 
   if (isSubmitting.value) return;
   isSubmitting.value = true;
@@ -48,6 +54,9 @@ const onFormSubmit = async (e) => {
       message: e.states.message?.value
     };
     const success = await FormService.sendForm(formData);
+    if (success) {
+      e.reset();
+    }
 
     toast.add({
       severity: success ? 'success' : 'error',
@@ -66,7 +75,7 @@ const onFormSubmit = async (e) => {
 
   <section id="contact-section">
     <div id="contact-intro">
-      <h2>{{ t("contact-title") }}</h2>
+      <h2 class="section-title">{{ t("contact-title") }}</h2>
       <h3>
         <span>{{t('contact-subtitle.bold')}}</span>
         {{ t('contact-subtitle.normal') }}
@@ -94,22 +103,22 @@ const onFormSubmit = async (e) => {
         </div>
       </div>
       <div id="contact-form">
-        <pv-form v-slot="$form" :validate-on-blur="true" :initialValues :resolver @submit="onFormSubmit">
+        <pv-form v-slot="$form" :initialValues :resolver @submit="onFormSubmit">
           <div id="contact-form-fields">
             <div class="contact-form-field">
-              <pv-inputtext name="name" type="text" :placeholder="t('contact-name')" fluid />
-              <pv-message v-if="$form.name?.invalid" severity="error" size="small" variant="simple">{{ $form.name.error.message }}</pv-message>
+              <pv-inputtext name="name" type="text" :placeholder="t('contact-name')" :invalid="showError.name && $form.name?.invalid" fluid />
+              <pv-message v-if="showError.name && $form.name?.invalid" severity="error" size="small" variant="simple">{{ $form.name.error.message }}</pv-message>
             </div>
             <div class="contact-form-field">
-              <pv-inputtext name="email" type="email" :placeholder="t('contact-email')" fluid />
-              <pv-message v-if="$form.email?.invalid" severity="error" size="small" variant="simple">{{ $form.email.error.message }}</pv-message>
+              <pv-inputtext name="email" type="email" :placeholder="t('contact-email')" :invalid="showError.email && $form.email?.invalid" fluid />
+              <pv-message v-if="showError.email && $form.email?.invalid" severity="error" size="small" variant="simple">{{ $form.email.error.message }}</pv-message>
             </div>
             <div class="contact-form-field">
-              <pv-textarea style="resize: none;" name="message" :placeholder="t('contact-message')" rows="5" fluid />
-              <pv-message v-if="$form.message?.invalid" severity="error" size="small" variant="simple">{{ $form.message.error.message }}</pv-message>
+              <pv-textarea style="resize: none;" name="message" :placeholder="t('contact-message')" rows="5" :invalid="showError.message && $form.message?.invalid" fluid />
+              <pv-message v-if="showError.message && $form.message?.invalid" severity="error" size="small" variant="simple">{{ $form.message.error.message }}</pv-message>
             </div>
           </div>
-          <pv-button :disabled="!$form.valid || isSubmitting" type="submit" :label="t('contact-button')" />
+          <pv-button :disabled="isSubmitting" type="submit" :label="t('contact-button')" />
         </pv-form>
       </div>
     </div>
@@ -119,9 +128,9 @@ const onFormSubmit = async (e) => {
 </template>
 
 <style scoped>
-
-h2{
-  margin: 0;
+.section-title::after{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 :deep(h3 span) {
@@ -133,32 +142,20 @@ h2{
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin: 3rem 0;
-}
-
-#contact-intro{
-  text-align: center;
-  margin: 0 1rem;
 }
 
 #contact-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  width: 100%;
 }
 
 #contact-information {
   display: flex;
   justify-content: center;
   gap: 3rem;
-  width: 100%;
   flex-wrap: wrap;
-  align-items: center;
-}
-
-.contact-item {
-  display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
@@ -166,36 +163,26 @@ h2{
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-decoration: none;
-}
-
-.contact-item i {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.contact-item p {
-  margin: 0;
-  text-align: center;
-  font-size: 1rem;
-}
-
-#contact-information a {
-  color: var(--p-secondary-color);
-  font-size: 1.2rem;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
   gap: 0.5rem;
+  color: var(--p-secondary-color);
+  text-decoration: none;
 }
 
-#contact-information a:hover {
+.contact-item a:hover {
   color: var(--p-primary-color);
 }
 
+.contact-item i {
+  font-size: 1.5rem;
+}
+
+.contact-item p {
+  font-size: 0.9rem;
+}
+
 #contact-form {
-  width: 25rem;
-  max-width: 95%;
+  width: 100%;
+  box-sizing: border-box;
   padding: 1rem;
   border-radius: 1rem;
   background-color: var(--p-content-background);
@@ -214,30 +201,23 @@ h2{
   gap: 0.25rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   #contact-container {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  #contact-form {
-    width: 100%;
-  }
-
-  .contact-item {
-    margin-top: 0.75rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
   }
 
   .contact-item i {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 2rem;
   }
 
   .contact-item p {
-    margin: 0;
-    text-align: center;
-    font-size: 0.75rem;
+    font-size: 1rem;
+  }
+
+  #contact-form {
+    max-width: 25rem;
   }
 }
-
 </style>

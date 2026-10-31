@@ -6,16 +6,26 @@
     --breakpoint-ultrawide: 2560px;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
     font-family: Inter, sans-serif;
-    margin: 0 auto;
 }
 
 #app{
     min-height: 100vh;
+}
+
+/* every page section shares one width so the edges line up while scrolling */
+#app > section{
+    width: min(1100px, calc(100% - 2rem));
+    margin: 4rem auto;
+    scroll-margin-top: 5rem;
 }
 
 h1, h2, h3 {
@@ -23,40 +33,67 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 3rem;
-    font-weight: 700;
-}
-
-h2 {
     font-size: 2rem;
     font-weight: 700;
 }
 
-h3 {
+h2 {
     font-size: 1.5rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1rem;
     font-weight: 500;
 }
 
 p {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 300;
     margin: 0;
 }
 
-@media screen and (max-width: 768px) {
+.section-title{
+    margin: 0 0 2rem;
+}
+
+.section-title::after{
+    content: '';
+    display: block;
+    width: 3rem;
+    height: 4px;
+    margin-top: 0.5rem;
+    border-radius: 2px;
+    background: var(--p-primary-color);
+}
+
+.tag{
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--p-primary-color);
+    background: color-mix(in srgb, var(--p-primary-color) 12%, transparent);
+}
+
+@media screen and (min-width: 768px) {
+    #app > section{
+        margin: 6rem auto;
+    }
+
     h1 {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
     }
 
     h3 {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
 
     p {
-        font-size: 0.75rem;
+        font-size: 1rem;
     }
 }
