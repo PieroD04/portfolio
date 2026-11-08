@@ -1,12 +1,21 @@
 <script setup>
+import { onMounted } from 'vue';
+import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
-const { t } = useI18n();
+import { localePath } from '@/locale-path.js';
+const { t, locale } = useI18n();
+const route = useRoute();
+
+// one 404.html serves every language, so translate it after hydration
+onMounted(() => {
+  if (route.path.startsWith('/es/')) locale.value = 'es';
+});
 </script>
 
 <template>
   <section id="not-found-page">
     <h1 class="section-title">{{ t('not-found-title') }}</h1>
-    <router-link to="/" class="back-link"><i class="pi pi-arrow-left"/> {{ t('projects-back') }}</router-link>
+    <router-link :to="localePath('/', locale)" class="back-link"><i class="pi pi-arrow-left"/> {{ t('projects-back') }}</router-link>
   </section>
 </template>
 

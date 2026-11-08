@@ -1,7 +1,10 @@
 <script setup>
 import { onMounted, ref } from 'vue';
+import { useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
+import { localePath } from '@/locale-path.js';
 const { t, locale } = useI18n();
+const route = useRoute();
 
 const isDarkMode = ref(false);
 const isMenuOpen = ref(false);
@@ -14,10 +17,8 @@ const navLinks = [
   { target: 'contact-section', label: 'nav-contact' }
 ];
 
-const changeLanguage = (code) => {
-  locale.value = code;
-  localStorage.setItem('language', code);
-}
+// the 404 page has no translated twin, so its switch goes to that language's home
+const languagePath = (code) => localePath(route.meta.base ?? '/', code);
 
 function toggleDarkMode() {
   isDarkMode.value = !isDarkMode.value;
@@ -26,9 +27,8 @@ function toggleDarkMode() {
   document.documentElement.classList.toggle('dark-mode', isDarkMode.value);
 }
 
-// saved preferences only exist in the browser, and must apply after hydration so it matches the prerendered HTML
+// the saved theme only exists in the browser, and must apply after hydration so it matches the prerendered HTML
 onMounted(() => {
-  locale.value = localStorage.getItem('language') || 'en';
   isDarkMode.value = document.documentElement.classList.contains('dark-mode');
 });
 </script>
@@ -36,19 +36,19 @@ onMounted(() => {
 <template>
   <header id="navbar">
     <div id="navbar-bar">
-      <router-link to="/" class="logo" @click="isMenuOpen = false">
+      <router-link :to="localePath('/', locale)" class="logo" @click="isMenuOpen = false">
         <img src="/favicon.svg" alt="Piero Delgado" width="36" height="36"/>
       </router-link>
 
       <nav class="nav-links desktop-only">
-        <router-link v-for="link in navLinks" :key="link.target" :to="{ path: '/', hash: `#${link.target}` }">{{ t(link.label) }}</router-link>
+        <router-link v-for="link in navLinks" :key="link.target" :to="{ path: localePath('/', locale), hash: `#${link.target}` }">{{ t(link.label) }}</router-link>
       </nav>
 
       <div class="nav-actions desktop-only">
         <pv-button :icon="isDarkMode ? 'pi pi-sun' : 'pi pi-moon'" :aria-label="t('nav-theme')" text rounded @click="toggleDarkMode"/>
         <div class="language-switch">
-          <pv-button v-for="code in languages" :key="code" :label="code.toUpperCase()" size="small"
-                     :outlined="locale !== code" @click="changeLanguage(code)"/>
+          <pv-button v-for="code in languages" :key="code" as="router-link" :to="languagePath(code)" :label="code.toUpperCase()" size="small"
+                     :outlined="locale !== code"/>
         </div>
       </div>
 
@@ -61,7 +61,7 @@ onMounted(() => {
     <Transition name="menu">
       <div v-if="isMenuOpen" id="mobile-menu" class="mobile-only">
         <nav class="nav-links">
-          <router-link v-for="link in navLinks" :key="link.target" :to="{ path: '/', hash: `#${link.target}` }" @click="isMenuOpen = false">{{ t(link.label) }}</router-link>
+          <router-link v-for="link in navLinks" :key="link.target" :to="{ path: localePath('/', locale), hash: `#${link.target}` }" @click="isMenuOpen = false">{{ t(link.label) }}</router-link>
         </nav>
         <div class="menu-row">
           <span>{{ t('nav-theme') }}</span>
@@ -70,8 +70,8 @@ onMounted(() => {
         <div class="menu-row">
           <span>{{ t('nav-language') }}</span>
           <div class="language-switch">
-            <pv-button v-for="code in languages" :key="code" :label="code.toUpperCase()" size="small"
-                       :outlined="locale !== code" @click="changeLanguage(code)"/>
+            <pv-button v-for="code in languages" :key="code" as="router-link" :to="languagePath(code)" :label="code.toUpperCase()" size="small"
+                       :outlined="locale !== code"/>
           </div>
         </div>
       </div>
@@ -123,6 +123,10 @@ onMounted(() => {
 
 .nav-actions {
   gap: 0.75rem;
+}
+
+.language-switch a {
+  text-decoration: none;
 }
 
 #mobile-menu {

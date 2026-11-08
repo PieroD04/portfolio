@@ -2,6 +2,7 @@
 import { computed } from 'vue';
 import { ProjectService } from "../services/project.service.js";
 import { useI18n } from 'vue-i18n';
+import { localePath } from '@/locale-path.js';
 const { locale, t } = useI18n();
 
 const projects = computed(() => ProjectService.getProjects(locale.value));
@@ -9,7 +10,7 @@ const projects = computed(() => ProjectService.getProjects(locale.value));
 
 <template>
   <section id="projects-page">
-    <router-link to="/" class="back-link"><i class="pi pi-arrow-left"/> {{ t('projects-back') }}</router-link>
+    <router-link :to="localePath('/', locale)" class="back-link"><i class="pi pi-arrow-left"/> {{ t('projects-back') }}</router-link>
     <h1 class="section-title">{{ t('projects-title') }}</h1>
 
     <article v-for="project in projects" :key="project.url" class="project-detail">

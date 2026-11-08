@@ -19,7 +19,7 @@ import en from './locale/en.json'
 import es from './locale/es.json'
 import { routes, scrollBehavior } from './router.js'
 
-export const createApp = ViteSSG(App, { routes, scrollBehavior }, ({ app }) => {
+export const createApp = ViteSSG(App, { routes, scrollBehavior }, ({ app, router }) => {
     const i18n = createI18n({
         legacy: false,
         locale: 'en',
@@ -28,6 +28,11 @@ export const createApp = ViteSSG(App, { routes, scrollBehavior }, ({ app }) => {
             en: en,
             es: es,
         }
+    });
+
+    // the URL decides the language, so each prerendered page comes out in its own
+    router.beforeEach(to => {
+        i18n.global.locale.value = to.meta.lang;
     });
 
     app.use(PrimeVue, {
