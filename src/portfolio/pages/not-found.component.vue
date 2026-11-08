@@ -12,6 +12,7 @@ const { t } = useI18n();
 
 <style scoped>
 #not-found-page{
+  flex: 1;
   margin-top: 6rem;
 }
 
@@ -22,5 +23,13 @@ const { t } = useI18n();
   color: var(--p-primary-color);
   text-decoration: none;
   font-weight: 500;
+}
+</style>
+
+<style>
+/* this page is shorter than the viewport, so stretch it to keep the footer at the bottom */
+#app:has(#not-found-page){
+  display: flex;
+  flex-direction: column;
 }
 </style>
