@@ -13,7 +13,8 @@
     <link rel="preload" as="font" type="font/woff2" crossorigin href="./node_modules/primeicons/fonts/primeicons.woff2">
     <!-- text only appears once Vue renders, so a preloaded font that beats the JS bundle never swaps -->
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-latin.woff2">
-    <!-- the HTML is prerendered, so apply dark mode before first paint to avoid a light flash -->
+    <!-- the HTML is prerendered, so apply dark mode before first paint to avoid a light flash; PrimeVue's own color-scheme rule only arrives with the JS -->
+    <style>.dark-mode{color-scheme:dark}</style>
     <script>
       try { if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark-mode'); } catch {}
     </script>
