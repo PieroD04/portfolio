@@ -1,6 +1,7 @@
 {
   "projects": [
     {
+      "slug": "agrotech",
       "name": {
         "en": "AgroTech",
         "es": "AgroTech"
@@ -28,18 +29,145 @@
       },
       "highlights": {
         "en": [
-          "Led the migration of a monolithic application to a microservices architecture using Spring Boot, Eureka for service discovery and an API Gateway for centralized routing.",
           "Designed unit and integration tests with JUnit and implemented BDD tests with Cucumber to ensure software quality.",
           "Implemented CI/CD with GitHub Actions and Docker to automate deployment and reduce manual errors."
         ],
         "es": [
-          "Dirigí la migración de una aplicación monolítica a una arquitectura de microservicios con Spring Boot, Eureka para el descubrimiento de servicios y un API Gateway para centralizar el enrutamiento.",
           "Diseñé pruebas unitarias y de integración con JUnit e implementé pruebas BDD con Cucumber para asegurar la calidad del software.",
           "Implementé prácticas de CI/CD con GitHub Actions y Docker para automatizar el despliegue y reducir errores manuales."
         ]
+      },
+      "teamSize": 6,
+      "repos": [
+        {
+          "name": "InnovaTech-UPC/Backend",
+          "url": "https://github.com/InnovaTech-UPC/Backend"
+        },
+        {
+          "name": "InnovaTech-UPC/Frontend",
+          "url": "https://github.com/InnovaTech-UPC/Frontend"
+        },
+        {
+          "name": "InnovaTech-UPC/Mobile",
+          "url": "https://github.com/InnovaTech-UPC/Mobile"
+        },
+        {
+          "name": "InnovaTech-UPC/Report",
+          "url": "https://github.com/InnovaTech-UPC/Report"
+        }
+      ],
+      "problem": {
+        "en": "Peru's farming sector employs about 27.5% of the workforce but contributes only 5.2% of GDP, and many producers lack access to specialized advice and suitable technology. AgroTech connects agricultural producers with advisors through web and mobile apps. The course, Experiment Design for Software Engineering, also required us to prove software quality and validate new features with real users.",
+        "es": "El sector agropecuario del Perú emplea a cerca del 27.5% de la población activa, pero aporta solo el 5.2% del PBI, y muchos productores no acceden a asesoría especializada ni a tecnología adecuada. AgroTech conecta a productores agrícolas con asesores mediante aplicaciones web y móvil. El curso, Diseño de Experimentos para Ingeniería de Software, además exigía demostrar la calidad del software y validar nuevas funcionalidades con usuarios reales."
+      },
+      "decisions": {
+        "en": [
+          "Structured the Spring Boot backend with Domain-Driven Design and documented it with Swagger, so the Angular and Kotlin clients could integrate against one API.",
+          "Planned five experiments before building them, covering the contact form, contact channel, interface personalization, forum and product video, each with its own hypothesis.",
+          "Layered the tests: JUnit 5 and Mockito for isolated units, integration tests across services, repositories and controllers, and Cucumber for BDD from the user's perspective.",
+          "Built the CI/CD pipeline with GitHub Actions and ran the tests against a real MySQL database on the runner instead of settling for H2.",
+          "Treated new features as experiments: I built the backend for the forum, including posts, replies and favorites, so the team could measure whether users valued it."
+        ],
+        "es": [
+          "Estructuramos el backend en Spring Boot con Domain-Driven Design y lo documentamos con Swagger, para que los clientes en Angular y Kotlin se integraran con una sola API.",
+          "Planificamos cinco experimentos antes de construirlos, sobre el formulario de contacto, el canal de contacto, la personalización de la interfaz, el foro y el video del producto, cada uno con su hipótesis.",
+          "Organizamos las pruebas por niveles: JUnit 5 y Mockito para unidades aisladas, pruebas de integración entre servicios, repositorios y controladores, y Cucumber para BDD desde la perspectiva del usuario.",
+          "Armé el pipeline de CI/CD con GitHub Actions y ejecuté las pruebas contra una base de datos MySQL real en el runner, en lugar de quedarnos con H2.",
+          "Tratamos las nuevas funcionalidades como experimentos: desarrollé el backend del foro, con publicaciones, respuestas y favoritos, para que el equipo midiera si los usuarios lo valoraban."
+        ]
+      },
+      "result": {
+        "en": "In a survey of 23 users, 73.9% rated the forum useful or very useful, 95.7% found the redesigned contact form easier to use, and 60.9% considered the changes significant to their experience. The product shipped with web and mobile clients, and with unit, integration and BDD tests.",
+        "es": "En una encuesta a 23 usuarios, el 73.9% calificó el foro como útil o muy útil, el 95.7% encontró más fácil el nuevo formulario de contacto y el 60.9% consideró significativos los cambios para su experiencia. El producto se entregó con clientes web y móvil, y con pruebas unitarias, de integración y BDD."
       }
     },
     {
+      "slug": "farmwise",
+      "name": {
+        "en": "FarmWise",
+        "es": "FarmWise"
+      },
+      "description": {
+        "en": "Farm management and advisory platform whose Spring Boot monolith was split into microservices, with Eureka service discovery, an API Gateway and Docker deployment.",
+        "es": "Plataforma de gestión de granjas y asesoría cuyo monolito en Spring Boot se dividió en microservicios, con descubrimiento mediante Eureka, un API Gateway y despliegue con Docker."
+      },
+      "date": {
+        "en": "April 2025 - July 2025",
+        "es": "Abril 2025 - Julio 2025"
+      },
+      "image": "farmwise.png",
+      "url": "https://github.com/FarmWise-UPC/Microservices",
+      "tags": [
+        "Spring Boot",
+        "Spring Cloud",
+        "Eureka",
+        "Docker",
+        "Angular"
+      ],
+      "role": {
+        "en": "Team Lead - Backend Developer",
+        "es": "Líder de equipo - Desarrollador Backend"
+      },
+      "highlights": {
+        "en": [
+          "Led the migration of a monolithic application to a microservices architecture using Spring Boot, Eureka for service discovery and an API Gateway for centralized routing."
+        ],
+        "es": [
+          "Dirigí la migración de una aplicación monolítica a una arquitectura de microservicios con Spring Boot, Eureka para el descubrimiento de servicios y un API Gateway para centralizar el enrutamiento."
+        ]
+      },
+      "teamSize": 5,
+      "repos": [
+        {
+          "name": "FarmWise-UPC/Microservices",
+          "url": "https://github.com/FarmWise-UPC/Microservices"
+        },
+        {
+          "name": "FarmWise-UPC/Microservices-config",
+          "url": "https://github.com/FarmWise-UPC/Microservices-config"
+        },
+        {
+          "name": "FarmWise-UPC/Backend",
+          "url": "https://github.com/FarmWise-UPC/Backend"
+        },
+        {
+          "name": "FarmWise-UPC/Frontend",
+          "url": "https://github.com/FarmWise-UPC/Frontend"
+        },
+        {
+          "name": "FarmWise-UPC/Landing",
+          "url": "https://github.com/FarmWise-UPC/Landing"
+        },
+        {
+          "name": "FarmWise-UPC/Acceptance-Test",
+          "url": "https://github.com/FarmWise-UPC/Acceptance-Test"
+        }
+      ],
+      "problem": {
+        "en": "FarmWise gives farmers tools to manage their enclosures and animals, book appointments with advisors and read their posts. It began as a single Spring Boot backend covering all of those areas. We then rebuilt it as separate services, so each domain could run and scale on its own.",
+        "es": "FarmWise ofrece a los granjeros herramientas para gestionar sus recintos y animales, reservar citas con asesores y leer sus publicaciones. Comenzó como un único backend en Spring Boot que cubría todas esas áreas. Luego lo reconstruimos como servicios separados, para que cada dominio pudiera ejecutarse y escalar por su cuenta."
+      },
+      "decisions": {
+        "en": [
+          "Split the backend into IAM, profile, appointment, management and post services, each with its own database.",
+          "Added Eureka for service discovery, an API Gateway as the single entry point, and a config service that reads from a separate configuration repository.",
+          "Forwarded the caller's JWT on calls between services, after those requests failed once security was added to each microservice.",
+          "Ran two instances of each domain service in a production Docker Compose setup."
+        ],
+        "es": [
+          "Dividimos el backend en servicios de IAM, perfiles, citas, gestión y publicaciones, cada uno con su propia base de datos.",
+          "Añadimos Eureka para el descubrimiento de servicios, un API Gateway como punto único de entrada y un servicio de configuración que lee de un repositorio aparte.",
+          "Reenviamos el JWT del usuario en las llamadas entre servicios, porque esas peticiones fallaban al añadir seguridad a cada microservicio.",
+          "Levantamos dos instancias de cada servicio de dominio en una configuración de Docker Compose para producción."
+        ]
+      },
+      "result": {
+        "en": "The monolith became five domain services plus discovery, gateway and configuration services, connected to an Angular frontend. The team also added unit tests and wrote acceptance tests for the user stories across five epics.",
+        "es": "El monolito se convirtió en cinco servicios de dominio más los de descubrimiento, gateway y configuración, conectados a un frontend en Angular. El equipo también añadió pruebas unitarias y escribió pruebas de aceptación para las historias de usuario de cinco épicas."
+      }
+    },
+    {
+      "slug": "smart-scheduler",
       "name": {
         "en": "Smart Scheduler",
         "es": "Smart Scheduler"
@@ -57,9 +185,33 @@
       "tags": [
         "React",
         "Tailwind"
-      ]
+      ],
+      "demo": "https://smart-scheduler.netlify.app",
+      "problem": {
+        "en": "Choosing university classes means juggling sections, professors, modalities and time slots, usually by trial and error. I built Smart Scheduler to turn those preferences into a timetable without overlaps.",
+        "es": "Elegir clases en la universidad implica combinar secciones, profesores, modalidades y horarios, normalmente a prueba y error. Creé Smart Scheduler para convertir esas preferencias en un horario sin cruces."
+      },
+      "decisions": {
+        "en": [
+          "Used a greedy optimizer: it goes through each course's sections in professor preference order and keeps the first one that doesn't overlap. It's simple and instant at the size of a student's course load, though it doesn't guarantee the best possible combination.",
+          "Made the preferred time range a soft constraint, so a course outside it is still scheduled instead of being dropped.",
+          "Added drag-and-drop with dnd-kit for ranking professors, since an ordered list is the most direct way to express preference.",
+          "Kept all data in Local Storage, so the app needs no backend or account."
+        ],
+        "es": [
+          "Usé un optimizador voraz: recorre las secciones de cada curso según la preferencia de profesores y conserva la primera que no genere cruces. Es simple e instantáneo para la carga de cursos de un estudiante, aunque no garantiza la mejor combinación posible.",
+          "Definí el rango horario preferido como una restricción flexible, para que un curso fuera de ese rango se programe en lugar de descartarse.",
+          "Añadí arrastrar y soltar con dnd-kit para ordenar profesores, ya que una lista ordenada es la forma más directa de expresar preferencias.",
+          "Guardé todos los datos en Local Storage, así la aplicación no necesita backend ni cuenta."
+        ]
+      },
+      "result": {
+        "en": "A working app deployed on Netlify: enter your sections, rank your professors, set a time range and get a visual weekly timetable in one click.",
+        "es": "Una aplicación funcional desplegada en Netlify: ingresas tus secciones, ordenas a tus profesores, defines un rango horario y obtienes un horario semanal visual con un clic."
+      }
     },
     {
+      "slug": "expense-tracker",
       "name": {
         "en": "Expense Tracker",
         "es": "Expense Tracker"
@@ -78,9 +230,35 @@
         "Django",
         "React",
         "PostgreSQL"
-      ]
+      ],
+      "demo": "https://piero-expensetracker.netlify.app",
+      "problem": {
+        "en": "Keeping track of spending across categories, recurring payments and more than one currency is tedious in a spreadsheet. I built a full-stack app to record expenses and see where the money goes.",
+        "es": "Controlar gastos entre categorías, pagos recurrentes y más de una moneda es tedioso en una hoja de cálculo. Creé una aplicación full-stack para registrar gastos y ver en qué se va el dinero."
+      },
+      "decisions": {
+        "en": [
+          "Separated a Django REST Framework API from a React client, with JWT authentication between them.",
+          "Stored each expense in its original currency, plus a per-user preferred currency for conversion in reports.",
+          "Kept monthly totals per category in their own analytics table, updated as expenses change, so the dashboard doesn't recalculate from every expense.",
+          "Made categories unique per user with a database constraint rather than relying on application checks.",
+          "Refactored the dashboard into smaller components and custom hooks as it grew, which also fixed a useEffect loop that was causing infinite API calls."
+        ],
+        "es": [
+          "Separé una API con Django REST Framework de un cliente en React, con autenticación JWT entre ambos.",
+          "Guardé cada gasto en su moneda original, junto con una moneda preferida por usuario para la conversión en reportes.",
+          "Mantuve los totales mensuales por categoría en su propia tabla de analíticas, actualizada al cambiar los gastos, para que el dashboard no recalcule a partir de cada gasto.",
+          "Hice que las categorías fueran únicas por usuario con una restricción de base de datos, en lugar de depender de validaciones en la aplicación.",
+          "Refactoricé el dashboard en componentes más pequeños y hooks personalizados conforme creció, lo que también resolvió un bucle de useEffect que generaba llamadas infinitas a la API."
+        ]
+      },
+      "result": {
+        "en": "A deployed app with secure accounts, recurring expenses, multi-currency tracking, spending charts and CSV export.",
+        "es": "Una aplicación desplegada con cuentas seguras, gastos recurrentes, seguimiento en varias monedas, gráficos de gastos y exportación a CSV."
+      }
     },
     {
+      "slug": "agrosupport",
       "name": {
         "en": "AgroSupport",
         "es": "AgroSupport"
@@ -115,9 +293,47 @@
           "Implementé agendamiento de asesorías, notificaciones y gestión de perfiles, integrados con un backend mediante HTTP.",
           "Apliqué arquitectura limpia y el patrón MVVM para mantener una separación clara de capas y facilitar nuevas funcionalidades."
         ]
+      },
+      "teamSize": 4,
+      "repos": [
+        {
+          "name": "AgroSupport-UPC/Frontend",
+          "url": "https://github.com/AgroSupport-UPC/Frontend"
+        },
+        {
+          "name": "AgroSupport-UPC/Backend",
+          "url": "https://github.com/AgroSupport-UPC/Backend"
+        },
+        {
+          "name": "AgroSupport-UPC/Project-Report",
+          "url": "https://github.com/AgroSupport-UPC/Project-Report"
+        }
+      ],
+      "problem": {
+        "en": "Guinea pig breeders in Peru often work without access to specialized advice, in a sector with low productivity. For a mobile development course, we built an Android app that lets them find an advisor and book a consultation from their phone.",
+        "es": "Los criadores de cuyes en el Perú suelen trabajar sin acceso a asesoría especializada, en un sector de baja productividad. Para un curso de desarrollo móvil, creamos una aplicación Android que les permite encontrar un asesor y reservar una consulta desde el celular."
+      },
+      "decisions": {
+        "en": [
+          "Built the UI in Kotlin with Jetpack Compose and organized it with MVVM and Clean Architecture, so several people could work on features in parallel.",
+          "Structured the Spring Boot backend with Domain-Driven Design and documented it with Swagger, giving the mobile side a clear contract to build against.",
+          "Created advisor and farmer records automatically when a matching profile is created, so the app's flows don't depend on a separate setup step.",
+          "Validated appointment dates and statuses on the server, after finding appointments could be booked in the past."
+        ],
+        "es": [
+          "Construimos la interfaz en Kotlin con Jetpack Compose y la organizamos con MVVM y arquitectura limpia, para que varias personas pudieran avanzar funcionalidades en paralelo.",
+          "Estructuramos el backend en Spring Boot con Domain-Driven Design y lo documentamos con Swagger, lo que dio al equipo móvil un contrato claro.",
+          "Creamos automáticamente los registros de asesor y granjero al crear el perfil correspondiente, para que los flujos no dependieran de un paso de configuración aparte.",
+          "Validamos las fechas y estados de las citas en el servidor, tras detectar que se podían reservar citas en el pasado."
+        ]
+      },
+      "result": {
+        "en": "We delivered the Android app and a containerized backend connected to a remote database. Validation interviews confirmed the app was easy to use and pointed to design and navigation improvements.",
+        "es": "Entregamos la aplicación Android y un backend en contenedores conectado a una base de datos remota. Las entrevistas de validación confirmaron que la aplicación era fácil de usar y señalaron mejoras de diseño y navegación."
       }
     },
     {
+      "slug": "datapathway",
       "name": {
         "en": "DataPathway",
         "es": "DataPathway"
@@ -135,9 +351,33 @@
       "tags": [
         "Python",
         "Graph Algorithms"
-      ]
+      ],
+      "teamSize": 3,
+      "problem": {
+        "en": "Network congestion and wasted bandwidth come from inefficient paths between devices. For the Algorithmic Complexity course, we modeled a real dataset of over 3.5 million network flows as a graph to find the cheapest set of connections linking its devices.",
+        "es": "La congestión de red y el desperdicio de ancho de banda provienen de rutas ineficientes entre dispositivos. Para el curso de Complejidad Algorítmica, modelamos como grafo un conjunto real de más de 3.5 millones de flujos de red para encontrar el conjunto de conexiones más económico que une a sus dispositivos."
+      },
+      "decisions": {
+        "en": [
+          "Modeled IP addresses as nodes and the traffic between them as weighted edges.",
+          "Implemented both Kruskal and Prim to build the minimum spanning tree, since their efficiency depends on how sparse or dense the network is.",
+          "Measured algorithm and drawing time separately for each run, so rendering cost wouldn't distort the comparison.",
+          "Wrapped the analysis in a Flask web page that compares both algorithms and draws the resulting graphs."
+        ],
+        "es": [
+          "Modelamos las direcciones IP como nodos y el tráfico entre ellas como aristas con peso.",
+          "Implementamos Kruskal y Prim para construir el árbol de expansión mínima, ya que su eficiencia depende de qué tan dispersa o densa sea la red.",
+          "Medimos por separado el tiempo del algoritmo y el del dibujo en cada ejecución, para que el renderizado no distorsionara la comparación.",
+          "Integramos el análisis en una página web con Flask que compara ambos algoritmos y dibuja los grafos resultantes."
+        ]
+      },
+      "result": {
+        "en": "A tool that builds both spanning trees from the flow data and shows, side by side, the edges kept and the time each algorithm took.",
+        "es": "Una herramienta que construye ambos árboles a partir de los flujos de red y muestra, lado a lado, las aristas conservadas y el tiempo de cada algoritmo."
+      }
     },
     {
+      "slug": "agroconnect",
       "name": {
         "en": "AgroConnect",
         "es": "AgroConnect"
@@ -155,9 +395,49 @@
       "tags": [
         "Spring Boot",
         "Angular"
-      ]
+      ],
+      "teamSize": 5,
+      "repos": [
+        {
+          "name": "AgroTech-UPC/Web-Services",
+          "url": "https://github.com/AgroTech-UPC/Web-Services"
+        },
+        {
+          "name": "AgroTech-UPC/Frontend-Web-Applications",
+          "url": "https://github.com/AgroTech-UPC/Frontend-Web-Applications"
+        },
+        {
+          "name": "AgroTech-UPC/Project-Report",
+          "url": "https://github.com/AgroTech-UPC/Project-Report"
+        }
+      ],
+      "problem": {
+        "en": "Guinea pig breeding in Peru is growing, but many farms lack tools to manage animals, resources and expenses, or easy access to expert advice. AgroConnect brings farm management and advisor consultations into one web platform.",
+        "es": "La crianza de cuyes en el Perú está creciendo, pero muchas granjas no cuentan con herramientas para gestionar animales, recursos y gastos, ni con un acceso sencillo a expertos. AgroConnect reúne la gestión de la granja y las consultas con asesores en una sola plataforma web."
+      },
+      "decisions": {
+        "en": [
+          "Structured the Spring Boot API into bounded contexts with Domain-Driven Design, so farm management, appointments and users could evolve separately.",
+          "Added an IAM context for authentication, and tied breeders and advisors to user accounts.",
+          "Exposed queries by breeder and advisor, so each role's Angular views load only their own appointments, cages, expenses and publications.",
+          "Integrated external services for video calls and image storage after interviewees flagged data entry and consultations as areas to improve.",
+          "Containerized the API with Docker and moved it to a remote database for deployment."
+        ],
+        "es": [
+          "Estructuramos la API en Spring Boot en bounded contexts con Domain-Driven Design, para que la gestión de granjas, las citas y los usuarios evolucionaran por separado.",
+          "Añadimos un contexto de IAM para la autenticación y vinculamos criadores y asesores a cuentas de usuario.",
+          "Expusimos consultas por criador y asesor, para que las vistas en Angular de cada rol carguen solo sus citas, jaulas, gastos y publicaciones.",
+          "Integramos servicios externos de videollamadas y almacenamiento de imágenes, después de que los entrevistados señalaran mejoras en el ingreso de datos y las consultas.",
+          "Contenerizamos la API con Docker y la migramos a una base de datos remota para el despliegue."
+        ]
+      },
+      "result": {
+        "en": "We deployed the API with Swagger documentation alongside the Angular app, and validated the product through user interviews and a heuristic evaluation across four sprints.",
+        "es": "Desplegamos la API con documentación en Swagger junto con la aplicación en Angular, y validamos el producto con entrevistas a usuarios y una evaluación heurística a lo largo de cuatro sprints."
+      }
     },
     {
+      "slug": "cargoapp",
       "name": {
         "en": "CargoApp",
         "es": "CargoApp"
@@ -193,9 +473,50 @@
           "Desarrollé módulos de optimización de viajes, seguimiento de gastos y monitoreo en tiempo real con C# y ASP.NET Core en el backend y Vue.js en el frontend.",
           "Desplegué la aplicación contenerizando el frontend y el backend con Docker y alojándolos en servicios en la nube."
         ]
+      },
+      "teamSize": 5,
+      "demo": "https://webcargoapp.netlify.app",
+      "repos": [
+        {
+          "name": "Grupo-2-Apps-Web/Web-Services",
+          "url": "https://github.com/Grupo-2-Apps-Web/Web-Services"
+        },
+        {
+          "name": "Grupo-2-Apps-Web/Frontend-Web-Applications",
+          "url": "https://github.com/Grupo-2-Apps-Web/Frontend-Web-Applications"
+        },
+        {
+          "name": "Grupo-2-Apps-Web/Project-Report",
+          "url": "https://github.com/Grupo-2-Apps-Web/Project-Report"
+        }
+      ],
+      "problem": {
+        "en": "Road freight customers often can't see where their cargo is or what a trip is costing, which creates mistrust between them and transport providers. CargoApp gives both sides one place for trips, expenses, evidence and live tracking.",
+        "es": "Los clientes del transporte terrestre de carga muchas veces no pueden ver dónde está su mercancía ni cuánto cuesta un viaje, lo que genera desconfianza con los proveedores. CargoApp ofrece a ambas partes un solo lugar para viajes, gastos, evidencias y seguimiento en vivo."
+      },
+      "decisions": {
+        "en": [
+          "Modeled the ASP.NET Core API with Domain-Driven Design and later added an IAM bounded context for clients and entrepreneurs.",
+          "Reorganized the Vue frontend around the same domains, with a shared base service for API calls, so it matched the backend.",
+          "Used Leaflet for the tracking map and Chart.js for trip statistics, instead of building visualizations from scratch.",
+          "Started the frontend against a mock JSON API, then switched to the real backend, so the two could progress in parallel.",
+          "Added filtered trip exports and fixed the issues raised by our heuristic evaluation before release."
+        ],
+        "es": [
+          "Modelamos la API en ASP.NET Core con Domain-Driven Design y luego añadimos un bounded context de IAM para clientes y empresarios.",
+          "Reorganizamos el frontend en Vue según los mismos dominios, con un servicio base compartido para las llamadas a la API, para alinearlo con el backend.",
+          "Usamos Leaflet para el mapa de seguimiento y Chart.js para las estadísticas de viajes, en lugar de construir visualizaciones desde cero.",
+          "Iniciamos el frontend con una API JSON simulada y luego pasamos al backend real, para que ambos avanzaran en paralelo.",
+          "Añadimos la exportación filtrada de viajes y corregimos los problemas detectados en la evaluación heurística antes del lanzamiento."
+        ]
+      },
+      "result": {
+        "en": "The frontend and API were deployed over successive sprints, with the Vue app published on Netlify. User interviews and a heuristic evaluation guided the final fixes.",
+        "es": "El frontend y la API se desplegaron a lo largo de varios sprints, con la aplicación en Vue publicada en Netlify. Las entrevistas a usuarios y la evaluación heurística guiaron las correcciones finales."
       }
     },
     {
+      "slug": "psychopro",
       "name": {
         "en": "PsychoPro",
         "es": "PsychoPro"
@@ -214,9 +535,31 @@
         "HTML",
         "CSS",
         "JavaScript"
-      ]
+      ],
+      "teamSize": 5,
+      "problem": {
+        "en": "Early signs of mental health disorders often go unassessed. For a Human-Computer Interaction course, our team designed a landing page to explain an AI-driven expert system for early psychological assessment and encourage people to explore it.",
+        "es": "Los primeros signos de trastornos de salud mental muchas veces no se evalúan. Para un curso de Interacción Humano-Computadora, nuestro equipo diseñó una landing page que explica un sistema experto con IA para evaluaciones psicológicas tempranas e invita a conocerlo."
+      },
+      "decisions": {
+        "en": [
+          "Used plain HTML, CSS and JavaScript, since a single promotional page doesn't need a framework.",
+          "Split the header, footer and sections into reusable HTML templates.",
+          "Led the page with the research behind the system, because trust matters for a mental health product."
+        ],
+        "es": [
+          "Usamos HTML, CSS y JavaScript sin frameworks, ya que una sola página promocional no los necesita.",
+          "Separamos el encabezado, el pie de página y las secciones en plantillas HTML reutilizables.",
+          "Dimos protagonismo a la investigación detrás del sistema, porque la confianza es clave en un producto de salud mental."
+        ]
+      },
+      "result": {
+        "en": "A finished landing page presenting the system's capabilities, its research-driven approach and the benefits of early assessment.",
+        "es": "Una landing page terminada que presenta las capacidades del sistema, su enfoque basado en investigación y los beneficios de una evaluación temprana."
+      }
     },
     {
+      "slug": "shopsync",
       "name": {
         "en": "ShopSync",
         "es": "ShopSync"
@@ -234,9 +577,33 @@
       "tags": [
         "C++",
         "Data Structures"
-      ]
+      ],
+      "teamSize": 3,
+      "problem": {
+        "en": "A supermarket system constantly adds, finds and removes items from carts, receipts and stock. For the Algorithms and Data Structures course, we built a C++ system for customers and administrators, choosing the structure that fit each operation.",
+        "es": "Un sistema de supermercado agrega, busca y elimina constantemente productos de carritos, boletas e inventario. Para el curso de Algoritmos y Estructuras de Datos, creamos un sistema en C++ para clientes y administradores, eligiendo la estructura adecuada para cada operación."
+      },
+      "decisions": {
+        "en": [
+          "Used an AVL tree for the shopping cart, so it stays balanced as items are added and removed.",
+          "Used a binary search tree for receipts, for fast search and insertion of entries.",
+          "Used a hash table for restocking, where quick lookup by product matters most.",
+          "Used a vector for the general inventory, and implemented every structure without external libraries."
+        ],
+        "es": [
+          "Usamos un árbol AVL para el carrito de compras, de modo que se mantenga balanceado al agregar y quitar productos.",
+          "Usamos un árbol binario de búsqueda para las boletas, para buscar e insertar entradas con rapidez.",
+          "Usamos una tabla hash para la reposición, donde lo más importante es encontrar rápido cada producto.",
+          "Usamos un vector para el inventario general e implementamos todas las estructuras sin bibliotecas externas."
+        ]
+      },
+      "result": {
+        "en": "A working console application where customers manage carts and receipts, and administrators monitor and replenish low stock, with data persisted to text files.",
+        "es": "Una aplicación de consola funcional donde los clientes gestionan carritos y boletas, y los administradores supervisan y reponen el stock bajo, con datos guardados en archivos de texto."
+      }
     },
     {
+      "slug": "limadefender",
       "name": {
         "en": "LimaDefender",
         "es": "LimaDefender"
@@ -255,9 +622,29 @@
         "C++",
         "Windows Forms",
         "OOP"
-      ]
+      ],
+      "teamSize": 4,
+      "problem": {
+        "en": "Our Algorithms final assignment asked for a game with a social purpose. Inspired by Goal 8 of the Sustainable Health Agenda for the Americas 2018-2030, LimaDefender teaches outbreak response: the player protects the generator powering a dome that keeps a zombie-borne virus out of Lima.",
+        "es": "El trabajo final de Algoritmos pedía un juego con propósito social. Inspirado en el Objetivo 8 de la Agenda de Salud Sostenible para las Américas 2018-2030, LimaDefender enseña sobre la respuesta ante brotes: el jugador protege el generador de una cúpula que impide que un virus propagado por zombies llegue a Lima."
+      },
+      "decisions": {
+        "en": [
+          "Modeled the player, enemies, generator and game rules as C++ classes, applying object-oriented design.",
+          "Rendered the game with Windows Forms, handling graphics updates, movement and collisions through its event model."
+        ],
+        "es": [
+          "Modelamos al jugador, los enemigos, el generador y las reglas del juego como clases en C++, aplicando diseño orientado a objetos.",
+          "Renderizamos el juego con Windows Forms, gestionando gráficos, movimiento y colisiones mediante su modelo de eventos."
+        ]
+      },
+      "result": {
+        "en": "A playable real-time defense game with a graphical interface that runs from Visual Studio.",
+        "es": "Un juego de defensa en tiempo real, jugable y con interfaz gráfica, que se ejecuta desde Visual Studio."
+      }
     },
     {
+      "slug": "nine-mens-morris",
       "name": {
         "en": "Nine Men's Morris Game",
         "es": "Juego del Molino"
@@ -274,7 +661,25 @@
       "url": "https://github.com/PieroD04/Nine-Mens-Morris",
       "tags": [
         "C++"
-      ]
+      ],
+      "problem": {
+        "en": "The final assignment of our first Software Engineering term was a group challenge: implement the full rules of Nine Men's Morris using only the fundamentals covered in class.",
+        "es": "El trabajo final de nuestro primer ciclo de Ingeniería de Software fue un reto grupal: implementar todas las reglas del Juego del Molino usando solo los fundamentos vistos en clase."
+      },
+      "decisions": {
+        "en": [
+          "Represented the board with arrays and validated moves with control structures, the tools the course focused on.",
+          "Split the game into separate functions, applying modular design."
+        ],
+        "es": [
+          "Representamos el tablero con arreglos y validamos los movimientos con estructuras de control, las herramientas en las que se centraba el curso.",
+          "Dividimos el juego en funciones separadas, aplicando diseño modular."
+        ]
+      },
+      "result": {
+        "en": "A complete two-player console game, and my first group software project.",
+        "es": "Un juego completo de dos jugadores en consola, y mi primer proyecto de software en equipo."
+      }
     }
   ]
 }

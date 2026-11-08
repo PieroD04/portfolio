@@ -1,5 +1,6 @@
 import Homepage from '@/portfolio/pages/homepage.component.vue';
 import { localePath } from '@/locale-path.js';
+import projectData from '@/data/projects.json';
 
 const description = 'Android Developer at Fitia, building mobile apps with Kotlin and Jetpack Compose. UPC Software Engineering student; side projects in Vue, React and Spring Boot.';
 
@@ -24,7 +25,13 @@ const pages = [
             title: 'Proyectos | Piero Delgado',
             description: 'Proyectos de software de Piero Delgado, con el rol, los logros y el código fuente de cada uno, incluidas aplicaciones web con Vue, React y Spring Boot.'
         }
-    }
+    },
+    ...projectData.projects.map(project => ({
+        path: `/projects/${project.slug}`,
+        component: () => import('@/portfolio/pages/project-detail.component.vue'),
+        en: { title: `${project.name.en} Case Study | Piero Delgado`, description: project.description.en, slug: project.slug },
+        es: { title: `Caso de estudio ${project.name.es} | Piero Delgado`, description: project.description.es, slug: project.slug }
+    }))
 ];
 
 export const routes = [

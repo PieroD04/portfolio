@@ -1,7 +1,8 @@
 <script setup>
 import { Project } from "@/portfolio/models/project.entity.js";
 import { useI18n } from 'vue-i18n';
-const { t } = useI18n();
+import { localePath } from '@/locale-path.js';
+const { t, locale } = useI18n();
 
 defineProps({
   project: {
@@ -30,8 +31,12 @@ const getImagePath = (image) => {
       </div>
     </template>
     <template #footer>
-      <pv-button class="project-link" as="a" :href="project.url" target="_blank" rel="noopener"
-                 :label="t('project-button')" icon="pi pi-github" outlined size="small"/>
+      <div class="project-actions">
+        <pv-button class="project-link" as="router-link" :to="localePath(`/projects/${project.slug}`, locale)"
+                   :label="t('project-details')" icon="pi pi-folder-open" size="small"/>
+        <pv-button class="project-link" as="a" :href="project.url" target="_blank" rel="noopener"
+                   :label="t('project-button')" icon="pi pi-github" outlined size="small"/>
+      </div>
     </template>
   </pv-card>
 </template>
@@ -73,5 +78,11 @@ const getImagePath = (image) => {
 
 .project-link{
   text-decoration: none;
+}
+
+.project-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 </style>

@@ -16,7 +16,7 @@ const projects = computed(() => ProjectService.getProjects(locale.value));
     <article v-for="project in projects" :key="project.url" class="project-detail">
       <img :src="`/assets/images/${project.image}`" :alt="`${t('project-image')} ${project.name}`" loading="lazy"/>
       <div class="project-info">
-        <h2>{{ project.name }}</h2>
+        <h2><router-link :to="localePath(`/projects/${project.slug}`, locale)">{{ project.name }}</router-link></h2>
         <p class="project-meta">
           <span v-if="project.role" class="project-role">{{ project.role }} · </span>{{ project.date }}
         </p>
@@ -27,8 +27,12 @@ const projects = computed(() => ProjectService.getProjects(locale.value));
         <div class="project-tags">
           <span v-for="tag in project.tags" :key="tag" class="tag">{{ tag }}</span>
         </div>
-        <pv-button as="a" :href="project.url" target="_blank" rel="noopener" :label="t('project-button')"
-                   icon="pi pi-github" outlined size="small" class="project-link"/>
+        <div class="project-actions">
+          <pv-button as="router-link" :to="localePath(`/projects/${project.slug}`, locale)" :label="t('project-details')"
+                     icon="pi pi-folder-open" size="small" class="project-link"/>
+          <pv-button as="a" :href="project.url" target="_blank" rel="noopener" :label="t('project-button')"
+                     icon="pi pi-github" outlined size="small" class="project-link"/>
+        </div>
       </div>
     </article>
   </section>
@@ -109,6 +113,17 @@ li + li{
 
 .project-link{
   text-decoration: none;
+}
+
+.project-info h2 a{
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
 @media screen and (min-width: 768px) {
