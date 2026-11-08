@@ -33,7 +33,7 @@ const getImagePath = (image) => {
     <template #footer>
       <div class="project-actions">
         <pv-button class="project-link" as="router-link" :to="localePath(`/projects/${project.slug}`, locale)"
-                   :label="t('project-details')" icon="pi pi-folder-open" size="small"/>
+                   :label="t('project-details')" icon="pi pi-book" size="small"/>
         <pv-button class="project-link" as="a" :href="project.url" target="_blank" rel="noopener"
                    :label="t('project-button')" icon="pi pi-github" outlined size="small"/>
       </div>

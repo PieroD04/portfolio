@@ -50,7 +50,7 @@ const project = computed(() => ProjectService.getProjects(locale.value).find(p =
 
 <style scoped>
 #project-page{
-  margin: 6rem auto 0;
+  margin: 6rem auto 4rem;
   max-width: 48rem;
 }
 

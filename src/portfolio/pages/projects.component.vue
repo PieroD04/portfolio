@@ -29,7 +29,7 @@ const projects = computed(() => ProjectService.getProjects(locale.value));
         </div>
         <div class="project-actions">
           <pv-button as="router-link" :to="localePath(`/projects/${project.slug}`, locale)" :label="t('project-details')"
-                     icon="pi pi-folder-open" size="small" class="project-link"/>
+                     icon="pi pi-book" size="small" class="project-link"/>
           <pv-button as="a" :href="project.url" target="_blank" rel="noopener" :label="t('project-button')"
                      icon="pi pi-github" outlined size="small" class="project-link"/>
         </div>
