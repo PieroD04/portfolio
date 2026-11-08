@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
+import { ViteSSG } from 'vite-ssg'
 import { createI18n } from "vue-i18n";
 import App from './App.vue'
 import PrimeVue from 'primevue/config';
@@ -17,43 +17,41 @@ import './style.css'
 import 'primeicons/primeicons.css';
 import en from './locale/en.json'
 import es from './locale/es.json'
-import { router } from './router.js'
+import { routes, scrollBehavior } from './router.js'
 
-
-const app = createApp(App);
-const i18n = createI18n({
-    legacy: false,
-    locale: 'en',
-    fallbackLocale: 'en',
-    messages: {
-        en: en,
-        es: es,
-    }
-});
-
-app.use(PrimeVue, {
-    ripple: true,
-    theme: {
-        preset: {
-            ...laraBase,
-            components: {
-                button: laraButton,
-                card: laraCard,
-                inputtext: laraInputText,
-                textarea: laraTextarea,
-                message: laraMessage,
-                toast: laraToast,
-                ripple: laraRipple
-            }
-        },
-        options: {
-            darkModeSelector: '.dark-mode'
+export const createApp = ViteSSG(App, { routes, scrollBehavior }, ({ app }) => {
+    const i18n = createI18n({
+        legacy: false,
+        locale: 'en',
+        fallbackLocale: 'en',
+        messages: {
+            en: en,
+            es: es,
         }
-    }
+    });
+
+    app.use(PrimeVue, {
+        ripple: true,
+        theme: {
+            preset: {
+                ...laraBase,
+                components: {
+                    button: laraButton,
+                    card: laraCard,
+                    inputtext: laraInputText,
+                    textarea: laraTextarea,
+                    message: laraMessage,
+                    toast: laraToast,
+                    ripple: laraRipple
+                }
+            },
+            options: {
+                darkModeSelector: '.dark-mode'
+            }
+        }
+    });
+    app.use(i18n);
+    app.use(ToastService);
+    app.component('pv-button', Button);
+    app.component('pv-card', Card);
 });
-app.use(i18n);
-app.use(router);
-app.use(ToastService);
-app.component('pv-button', Button);
-app.component('pv-card', Card);
-app.mount('#app')

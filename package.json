@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite-ssg build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@primeuix/themes": "^2.0.3",
     "@primevue/forms": "^4.5.5",
+    "@unhead/vue": "^2.1.17",
     "primeflex": "^3.3.1",
     "primeicons": "^7.0.0",
     "primevue": "^4.5.5",
@@ -22,6 +23,7 @@
     "@intlify/unplugin-vue-i18n": "^6.0.8",
     "@vitejs/plugin-vue": "^5.2.1",
     "vite": "^6.0.5",
-    "vite-plugin-vue-devtools": "^7.6.8"
+    "vite-plugin-vue-devtools": "^7.6.8",
+    "vite-ssg": "^28.3.0"
   }
 }

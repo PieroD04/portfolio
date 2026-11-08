@@ -3,9 +3,7 @@ import { onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 const { t, locale } = useI18n();
 
-locale.value = localStorage.getItem('language') || 'en';
-
-const isDarkMode = ref(localStorage.getItem('theme') === 'dark');
+const isDarkMode = ref(false);
 const isMenuOpen = ref(false);
 const languages = ['en', 'es'];
 
@@ -28,10 +26,10 @@ function toggleDarkMode() {
   document.documentElement.classList.toggle('dark-mode', isDarkMode.value);
 }
 
+// saved preferences only exist in the browser, and must apply after hydration so it matches the prerendered HTML
 onMounted(() => {
-  if (isDarkMode.value) {
-    document.documentElement.classList.add('dark-mode');
-  }
+  locale.value = localStorage.getItem('language') || 'en';
+  isDarkMode.value = document.documentElement.classList.contains('dark-mode');
 });
 </script>
 

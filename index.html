@@ -13,14 +13,12 @@
     <link rel="preload" as="font" type="font/woff2" crossorigin href="./node_modules/primeicons/fonts/primeicons.woff2">
     <!-- text only appears once Vue renders, so a preloaded font that beats the JS bundle never swaps -->
     <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/inter-latin.woff2">
-    <title>Piero Delgado | Software Engineer</title>
-    <meta name="description" content="Android Developer at Fitia, building mobile apps with Kotlin and Jetpack Compose. UPC Software Engineering student; side projects in Vue, React and Spring Boot.">
-    <link rel="canonical" href="https://pierodelgado.dev/">
-
+    <!-- the HTML is prerendered, so apply dark mode before first paint to avoid a light flash -->
+    <script>
+      try { if (localStorage.getItem('theme') === 'dark') document.documentElement.classList.add('dark-mode'); } catch {}
+    </script>
+    <!-- title, description, canonical and og:url/title/description are set per route in App.vue -->
     <meta property="og:type" content="profile">
-    <meta property="og:url" content="https://pierodelgado.dev/">
-    <meta property="og:title" content="Piero Delgado | Software Engineer">
-    <meta property="og:description" content="Android Developer at Fitia, building mobile apps with Kotlin and Jetpack Compose. UPC Software Engineering student; side projects in Vue, React and Spring Boot.">
     <meta property="og:image" content="https://pierodelgado.dev/assets/images/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -35,7 +33,9 @@
       "url": "https://pierodelgado.dev/",
       "image": "https://pierodelgado.dev/assets/images/hero-image.webp",
       "jobTitle": "Software Engineer",
-      "alumniOf": "Universidad Peruana de Ciencias Aplicadas (UPC)",
+      "worksFor": { "@type": "Organization", "name": "Fitia" },
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidad Peruana de Ciencias Aplicadas (UPC)" },
+      "knowsAbout": ["Android", "Kotlin", "Jetpack Compose", "Vue.js", "React", "Spring Boot"],
       "sameAs": [
         "https://www.linkedin.com/in/piero-delgado/",
         "https://github.com/PieroD04"

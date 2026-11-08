@@ -19,4 +19,8 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  ssgOptions: {
+    // the catch-all route isn't prerendered by default; /404 lands on it and becomes 404.html
+    includedRoutes: paths => [...paths.filter(path => !path.includes(':')), '/404']
+  },
 })
